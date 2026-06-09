@@ -1,8 +1,7 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
-
-import logo from '/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png';
+import Header from './components/Header';
 
 const services = [
   {
@@ -48,36 +47,9 @@ const gallery = [
   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'
 ];
 
-function Navbar() {
-  const location = useLocation();
-  const isActive = (path) => location.pathname === path;
-  
-  const linkClass = (path) => `font-medium transition-all duration-300 ${isActive(path) ? 'text-white border-b-2 border-white pb-1' : 'text-green-50 hover:text-white'}`;
-
-  return (
-    <nav className="fixed w-full bg-green-600/95 backdrop-blur-md shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Aplaka2 Logo" className="h-12 w-auto invert brightness-0" />
-            <span className="font-bold text-2xl tracking-tight text-white">Aplaka2</span>
-          </Link>
-          <div className="hidden md:flex space-x-8">
-            <Link to="/" className={linkClass('/')}>Inicio</Link>
-            <Link to="/servicios" className={linkClass('/servicios')}>Servicios</Link>
-            <Link to="/nosotros" className={linkClass('/nosotros')}>Nosotros</Link>
-            <Link to="/proyectos" className={linkClass('/proyectos')}>Proyectos</Link>
-            <Link to="/contacto" className={linkClass('/contacto')}>Contacto</Link>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
 function Inicio() {
   return (
-    <div className="relative pt-20 flex-grow flex flex-col">
+    <div className="relative pt-16 flex flex-col">
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
@@ -87,7 +59,7 @@ function Inicio() {
         <div className="absolute inset-0 bg-gray-900/70"></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex items-center w-full min-h-[calc(100vh-80px)]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex items-center w-full min-h-[calc(100vh-64px)]">
         <div className="max-w-2xl py-20">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
             Especialistas en Sistemas de Placa de Yeso Laminado
@@ -107,7 +79,7 @@ function Inicio() {
 
 function Servicios() {
   return (
-    <div className="pt-32 pb-20 bg-gray-50 flex-grow">
+    <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Servicios</h2>
@@ -134,7 +106,7 @@ function Servicios() {
 
 function Nosotros() {
   return (
-    <div className="pt-32 pb-20 flex-grow bg-white">
+    <div className="pt-28 pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div className="mb-10 lg:mb-0">
@@ -174,7 +146,7 @@ function Nosotros() {
 
 function Proyectos() {
   return (
-    <div className="pt-32 pb-20 bg-gray-50 flex-grow">
+    <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Proyectos</h2>
@@ -197,7 +169,7 @@ function Proyectos() {
 
 function Contacto() {
   return (
-    <div className="pt-32 pb-20 flex-grow bg-white">
+    <div className="pt-28 pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contacta con nosotros</h2>
@@ -263,14 +235,14 @@ function Contacto() {
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-8 mt-auto">
+    <footer className="bg-gray-900 text-white pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center items-center gap-2 mb-6">
-          <img src={logo} alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0 opacity-90" />
+          {/* The logo is now in the header, but you could keep a smaller one here if you like */}
           <span className="font-bold text-xl tracking-tight">Aplaka2</span>
         </div>
         <div className="border-t border-gray-800 pt-8 text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Aplaka2 - Reformas Integrales. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Aplaka2. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
@@ -281,15 +253,17 @@ export default function App() {
   return (
     <Router>
       <div className="font-sans text-gray-800 min-h-screen flex flex-col">
-        <Navbar />
+        <Header />
         
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/servicios" element={<Servicios />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/proyectos" element={<Proyectos />} />
-          <Route path="/contacto" element={<Contacto />} />
-        </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/servicios" element={<Servicios />} />
+            <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="/proyectos" element={<Proyectos />} />
+            <Route path="/contacto" element={<Contacto />} />
+          </Routes>
+        </main>
 
         <Footer />
       </div>
