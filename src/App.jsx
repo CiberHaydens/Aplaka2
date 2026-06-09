@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
-import Header from './components/Header';
+import Header from './Header';
 
 const services = [
   {
