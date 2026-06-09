@@ -68,10 +68,20 @@ function Inicio() {
           <p className="text-lg md:text-xl text-gray-200 mb-8">
             Transformamos tus espacios con soluciones rápidas, limpias y de la máxima calidad. Aislamiento, tabiquería y techos a medida.
           </p>
-          <Link to="/contacto" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl">
-            Solicitar Presupuesto
-            <ChevronRight className="ml-2 h-5 w-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://wa.me/34685554188"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl"
+            >
+              Contactar por WhatsApp
+            </a>
+            <a href="mailto:aplakados@gmail.com" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-white hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl">
+              <Mail className="mr-2 h-5 w-5" />
+              Enviar un Email
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -179,54 +189,32 @@ function Contacto() {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-10 bg-green-600 text-white flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-6">Información de Contacto</h3>
-              <ul className="space-y-6">
-                <li className="flex items-start">
-                  <Phone className="h-6 w-6 mr-4 shrink-0" />
-                  <div>
-                    <p className="font-medium text-green-100">Teléfono</p>
-                    <p className="text-lg">+34 685 554 188</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <Mail className="h-6 w-6 mr-4 shrink-0" />
-                  <div>
-                    <p className="font-medium text-green-100">Email</p>
-                    <p className="text-lg">aplakados@gmail.com</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <MapPin className="h-6 w-6 mr-4 shrink-0" />
-                  <div>
-                    <p className="font-medium text-green-100">Ubicación</p>
-                    <p className="text-lg">Málaga, España</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="p-10 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Horario de Atención</h3>
-              <div className="space-y-4 text-gray-600 text-lg">
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium text-gray-800">Lunes - Viernes</span>
-                  <span>08:00 - 18:00</span>
+        <div className="max-w-lg mx-auto bg-green-600 rounded-2xl shadow-xl overflow-hidden">
+          <div className="p-10 text-white flex flex-col justify-center">
+            <h3 className="text-2xl font-bold mb-6 text-center">Información de Contacto</h3>
+            <ul className="space-y-6">
+              <li className="flex items-start">
+                <Phone className="h-6 w-6 mr-4 shrink-0 mt-1" />
+                <div>
+                  <p className="font-medium text-green-100">Teléfono</p>
+                  <p className="text-lg">+34 685 554 188</p>
                 </div>
-                <div className="flex justify-between border-b border-gray-100 pb-2">
-                  <span className="font-medium text-gray-800">Sábado</span>
-                  <span>09:00 - 14:00</span>
+              </li>
+              <li className="flex items-start">
+                <Mail className="h-6 w-6 mr-4 shrink-0 mt-1" />
+                <div>
+                  <p className="font-medium text-green-100">Email</p>
+                  <p className="text-lg">aplakados@gmail.com</p>
                 </div>
-                <div className="flex justify-between pb-2">
-                  <span className="font-medium text-gray-800">Domingo</span>
-                  <span className="text-red-500 font-medium">Cerrado</span>
+              </li>
+              <li className="flex items-start">
+                <MapPin className="h-6 w-6 mr-4 shrink-0 mt-1" />
+                <div>
+                  <p className="font-medium text-green-100">Ubicación</p>
+                  <p className="text-lg">Málaga, España</p>
                 </div>
-              </div>
-              <div className="mt-8">
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
