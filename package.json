@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --cname aplaka2.es"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
