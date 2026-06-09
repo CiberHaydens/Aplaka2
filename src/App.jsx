@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
 import Header from './Header';
+import logo from '/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png';
 
 const services = [
   {
@@ -238,7 +239,7 @@ function Footer() {
     <footer className="bg-gray-900 text-white pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center items-center gap-2 mb-6">
-          {/* The logo is now in the header, but you could keep a smaller one here if you like */}
+          <img src={logo} alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0 opacity-90" />
           <span className="font-bold text-xl tracking-tight">Aplaka2</span>
         </div>
         <div className="border-t border-gray-800 pt-8 text-sm text-gray-500">
