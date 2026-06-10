@@ -180,41 +180,62 @@ function Proyectos() {
 
 function Contacto() {
   return (
-    <div className="pt-28 pb-20 bg-white">
+    <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Contacta con nosotros</h2>
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Contacta con nosotros</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Estamos aquí para ayudarte a transformar tus ideas en realidad.
+            Estamos aquí para ayudarte a transformar tus ideas en realidad. Ponte en contacto hoy mismo.
           </p>
         </div>
         
-        <div className="max-w-lg mx-auto bg-green-600 rounded-2xl shadow-xl overflow-hidden">
-          <div className="p-10 text-white flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-6 text-center">Información de Contacto</h3>
-            <ul className="space-y-6">
-              <li className="flex items-start">
-                <Phone className="h-6 w-6 mr-4 shrink-0 mt-1" />
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto">
+          {/* Información de contacto */}
+          <div className="bg-gradient-to-br from-green-800 to-green-600 p-10 text-white flex flex-col justify-center items-center text-center">
+            <h3 className="text-3xl font-bold mb-8">Información</h3>
+            
+            <ul className="space-y-8 max-w-md w-full">
+              <li className="flex flex-col items-center group">
+                <div className="bg-green-700/50 p-4 rounded-full group-hover:bg-white group-hover:text-green-700 transition-colors duration-300 mb-3">
+                  <Phone className="h-8 w-8" />
+                </div>
                 <div>
-                  <p className="font-medium text-green-100">Teléfono</p>
-                  <p className="text-lg">+34 685 554 188</p>
+                  <p className="text-sm font-medium text-green-200">Teléfono</p>
+                  <p className="text-xl font-semibold">+34 685 554 188</p>
                 </div>
               </li>
-              <li className="flex items-start">
-                <Mail className="h-6 w-6 mr-4 shrink-0 mt-1" />
+              <li className="flex flex-col items-center group">
+                <div className="bg-green-700/50 p-4 rounded-full group-hover:bg-white group-hover:text-green-700 transition-colors duration-300 mb-3">
+                  <Mail className="h-8 w-8" />
+                </div>
                 <div>
-                  <p className="font-medium text-green-100">Email</p>
-                  <p className="text-lg">aplakados@gmail.com</p>
+                  <p className="text-sm font-medium text-green-200">Email</p>
+                  <p className="text-xl font-semibold">aplakados@gmail.com</p>
                 </div>
               </li>
-              <li className="flex items-start">
-                <MapPin className="h-6 w-6 mr-4 shrink-0 mt-1" />
+              <li className="flex flex-col items-center group">
+                <div className="bg-green-700/50 p-4 rounded-full group-hover:bg-white group-hover:text-green-700 transition-colors duration-300 mb-3">
+                  <MapPin className="h-8 w-8" />
+                </div>
                 <div>
-                  <p className="font-medium text-green-100">Ubicación</p>
-                  <p className="text-lg">Málaga, España</p>
+                  <p className="text-sm font-medium text-green-200">Ubicación</p>
+                  <p className="text-xl font-semibold">Málaga, España</p>
                 </div>
               </li>
             </ul>
+            
+            <div className="mt-12 flex space-x-6">
+              {/* Espacio para redes sociales si en el futuro se desean agregar */}
+              <div className="w-12 h-12 rounded-full bg-green-700/50 flex items-center justify-center hover:bg-white hover:text-green-700 transition-colors cursor-pointer">
+                <span className="font-bold">in</span>
+              </div>
+              <div className="w-12 h-12 rounded-full bg-green-700/50 flex items-center justify-center hover:bg-white hover:text-green-700 transition-colors cursor-pointer">
+                <span className="font-bold">fb</span>
+              </div>
+              <div className="w-12 h-12 rounded-full bg-green-700/50 flex items-center justify-center hover:bg-white hover:text-green-700 transition-colors cursor-pointer">
+                <span className="font-bold">ig</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
