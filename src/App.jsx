@@ -181,61 +181,51 @@ function Proyectos() {
 function Contacto() {
   return (
     <div className="pt-28 pb-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Contacta con nosotros</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Estamos aquí para ayudarte a transformar tus ideas en realidad. Ponte en contacto hoy mismo.
+            Estamos aquí para ayudarte a transformar tus ideas en realidad. Elige el medio que prefieras para ponerte en contacto.
           </p>
         </div>
         
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto">
-          {/* Información de contacto */}
-          <div className="bg-gradient-to-br from-green-800 to-green-600 p-10 text-white flex flex-col justify-center items-center text-center">
-            <h3 className="text-3xl font-bold mb-8">Información</h3>
-            
-            <ul className="space-y-8 max-w-md w-full">
-              <li className="flex flex-col items-center group">
-                <div className="bg-green-700/50 p-4 rounded-full group-hover:bg-white group-hover:text-green-700 transition-colors duration-300 mb-3">
-                  <Phone className="h-8 w-8" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-green-200">Teléfono</p>
-                  <p className="text-xl font-semibold">+34 685 554 188</p>
-                </div>
-              </li>
-              <li className="flex flex-col items-center group">
-                <div className="bg-green-700/50 p-4 rounded-full group-hover:bg-white group-hover:text-green-700 transition-colors duration-300 mb-3">
-                  <Mail className="h-8 w-8" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-green-200">Email</p>
-                  <p className="text-xl font-semibold">aplakados@gmail.com</p>
-                </div>
-              </li>
-              <li className="flex flex-col items-center group">
-                <div className="bg-green-700/50 p-4 rounded-full group-hover:bg-white group-hover:text-green-700 transition-colors duration-300 mb-3">
-                  <MapPin className="h-8 w-8" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-green-200">Ubicación</p>
-                  <p className="text-xl font-semibold">Málaga, España</p>
-                </div>
-              </li>
-            </ul>
-            
-            <div className="mt-12 flex space-x-6">
-              {/* Espacio para redes sociales si en el futuro se desean agregar */}
-              <div className="w-12 h-12 rounded-full bg-green-700/50 flex items-center justify-center hover:bg-white hover:text-green-700 transition-colors cursor-pointer">
-                <span className="font-bold">in</span>
-              </div>
-              <div className="w-12 h-12 rounded-full bg-green-700/50 flex items-center justify-center hover:bg-white hover:text-green-700 transition-colors cursor-pointer">
-                <span className="font-bold">fb</span>
-              </div>
-              <div className="w-12 h-12 rounded-full bg-green-700/50 flex items-center justify-center hover:bg-white hover:text-green-700 transition-colors cursor-pointer">
-                <span className="font-bold">ig</span>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Teléfono / WhatsApp */}
+          <a 
+            href="https://wa.me/34685554188" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+          >
+            <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors duration-300">
+              <Phone className="h-8 w-8 text-green-600 group-hover:text-white transition-colors duration-300" />
             </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Llámanos o WhatsApp</h3>
+            <p className="text-gray-600 mb-4 flex-grow">Atención rápida y personalizada para presupuestos y consultas.</p>
+            <span className="text-lg font-semibold text-green-600">+34 685 554 188</span>
+          </a>
+
+          {/* Email */}
+          <a 
+            href="mailto:aplakados@gmail.com"
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+          >
+            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+              <Mail className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Envíanos un Email</h3>
+            <p className="text-gray-600 mb-4 flex-grow">Escríbenos con los detalles de tu proyecto y te responderemos pronto.</p>
+            <span className="text-lg font-semibold text-blue-600">aplakados@gmail.com</span>
+          </a>
+
+          {/* Ubicación */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+            <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors duration-300">
+              <MapPin className="h-8 w-8 text-red-600 group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Nuestra Ubicación</h3>
+            <p className="text-gray-600 mb-4 flex-grow">Ofrecemos nuestros servicios principalmente en la provincia de Málaga.</p>
+            <span className="text-lg font-semibold text-red-600">Málaga, España</span>
           </div>
         </div>
       </div>
@@ -248,7 +238,7 @@ function Footer() {
     <footer className="bg-gray-900 text-white pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center items-center gap-2 mb-6">
-          <img src={logo} alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0 opacity-90" />
+          <img src="/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png" alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0 opacity-90" />
           <span className="font-bold text-xl tracking-tight">Aplaka2</span>
         </div>
         <div className="border-t border-gray-800 pt-8 text-sm text-gray-500">

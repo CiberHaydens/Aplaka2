@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <NavLink to="/" className="flex items-center gap-2">
-              <img src={logo} alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0" />
+              <img src="/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png" alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0" />
               <span className="font-bold text-2xl tracking-tight text-white">Aplaka2</span>
             </NavLink>
           </div>
