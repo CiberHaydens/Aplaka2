@@ -11,6 +11,13 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# Cachés y reportes
+.eslintcache
+*.tsbuildinfo
+coverage/
+.node_repl_history
 
 # Entorno
 .env
@@ -19,6 +26,9 @@ yarn-error.log*
 
 # Editores y sistema operativo
 .vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
+Thumbs.db
