@@ -6,33 +6,33 @@ import logo from '/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png';
 
 const services = [
   {
-    title: 'Placa de Yeso Laminado',
-    description: 'Instalación profesional de sistemas de placa de yeso laminado para tabiquería y decoración.',
+    title: 'Sistemas PYL',
+    description: 'Instalación profesional de sistemas de placa de yeso laminado (PYL) para tabiquería seca, techos y decoración. Soluciones duraderas y versátiles.',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80'
   },
   {
-    title: 'Tabiques',
-    description: 'Separación de espacios y distribución de interiores con los mejores materiales de aislamiento.',
+    title: 'Tabiques de Yeso Laminado',
+    description: 'Separación de espacios y distribución de interiores con tabiquería PYL. Montaje rápido, limpio y con excelente aislamiento termoacústico.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80'
   },
   {
     title: 'Trasdosados',
-    description: 'Revestimiento de muros interiores para mejorar el aislamiento térmico y acústico de su vivienda.',
+    description: 'Trasdosados directos, semidirectos y autoportantes con placas PYL. Revestimiento de muros para mejorar el aislamiento térmico y acústico.',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80'
   },
   {
-    title: 'Techos Continuos',
-    description: 'Creación de falsos techos lisos y uniformes, ideales para ocultar instalaciones y mejorar la estética.',
+    title: 'Techos Continuos PYL',
+    description: 'Instalación de techos continuos de placa de yeso laminado. Falsos techos lisos y uniformes, perfectos para ocultar instalaciones y mejorar la estética.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80'
   },
   {
     title: 'Techos Registrables',
-    description: 'Soluciones modulares perfectas para oficinas y locales comerciales que requieren acceso al techo.',
+    description: 'Techos registrables con perfilería vista u oculta. Soluciones PYL modulares ideales para oficinas, locales comerciales y espacios dinámicos.',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&q=80'
   },
   {
-    title: 'Insonorización',
-    description: 'Sistemas avanzados de aislamiento acústico para garantizar la tranquilidad en cualquier espacio.',
+    title: 'Aislamiento e Insonorización',
+    description: 'Proyectos de insonorización y acondicionamiento acústico mediante sistemas PYL avanzados. Garantizamos el máximo confort en su espacio.',
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&q=80'
   }
 ];
@@ -63,10 +63,10 @@ function Inicio() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex items-center w-full min-h-[calc(100vh-64px)]">
         <div className="max-w-2xl py-20">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
-            Especialistas en Sistemas de Placa de Yeso Laminado
+            Instaladores Especialistas en Sistemas PYL (Placa de Yeso Laminado)
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Transformamos tus espacios con soluciones rápidas, limpias y de la máxima calidad. Aislamiento, tabiquería y techos a medida.
+            Transformamos tus espacios con soluciones de construcción en seco rápidas, limpias y de la máxima calidad. Expertos en tabiquería PYL, falsos techos, trasdosados e insonorización a medida.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -93,9 +93,9 @@ function Servicios() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Servicios</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Servicios en Sistemas PYL</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrecemos soluciones integrales adaptadas a las necesidades de su hogar o negocio, garantizando los mejores acabados.
+            Ofrecemos soluciones integrales en instalación de placas de yeso laminado adaptadas a las necesidades de su hogar o negocio. Garantizamos los mejores acabados en construcción en seco.
           </p>
         </div>
 
@@ -129,19 +129,19 @@ function Nosotros() {
           </div>
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">
-              Compromiso, Calidad y Experiencia
+              Empresa Instaladora de Sistemas PYL con Experiencia
             </h2>
             <div className="text-lg text-gray-600">
               <p className="mb-6 font-semibold text-gray-800">
-                En Aplaka2, nuestra misión es ayudarte a crear espacios mejor aprovechados, más cómodos y con acabados de la más alta calidad.
+                En Aplaka2, nuestra misión es ayudarle a crear espacios mejor aprovechados y más confortables mediante la tabiquería en seco, garantizando acabados de la más alta calidad.
               </p>
               <p className="mb-8">
-                Nos especializamos en la instalación de sistemas de placa de yeso laminado (Pladur) para viviendas, locales y oficinas, ofreciendo soluciones innovadoras que combinan funcionalidad, aislamiento superior y un diseño moderno.
+                Como expertos montadores, nos especializamos en la instalación de sistemas de placa de yeso laminado (PYL, también conocido comúnmente como Pladur) para reformas de viviendas, locales comerciales y oficinas. Ofrecemos soluciones innovadoras que combinan funcionalidad, un aislamiento termoacústico superior y un diseño interior moderno.
               </p>
             </div>
             
             <ul className="space-y-4 bg-gray-50 p-6 rounded-xl border border-gray-100">
-              {['Materiales de primera calidad', 'Equipo altamente cualificado', 'Cumplimiento de plazos', 'Asesoramiento personalizado'].map((item, i) => (
+              {['Sistemas PYL certificados', 'Aislamiento térmico y acústico', 'Instalación rápida y limpia', 'Asesoramiento técnico especializado'].map((item, i) => (
                 <li key={i} className="flex items-center text-gray-700">
                   <CheckCircle className="h-6 w-6 text-green-500 mr-3 shrink-0" />
                   <span className="text-lg font-medium">{item}</span>
@@ -160,9 +160,9 @@ function Proyectos() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Proyectos</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Proyectos Realizados con Placa de Yeso Laminado</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Explora algunos de nuestros trabajos recientes. Esta galería se irá actualizando con nuestros nuevos proyectos.
+            Explore algunos de nuestros trabajos recientes en instalación de tabiques, trasdosados y techos PYL. Nuestra galería se actualiza con nuevos proyectos de construcción en seco.
           </p>
         </div>
 
@@ -183,9 +183,9 @@ function Contacto() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Contacta con nosotros</h2>
+          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Solicite Presupuesto para Sistemas PYL</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Estamos aquí para ayudarte a transformar tus ideas en realidad. Elige el medio que prefieras para ponerte en contacto.
+            ¿Necesita un presupuesto sin compromiso para la instalación de placas de yeso laminado? Estamos aquí para asesorarle en su proyecto de reforma o construcción.
           </p>
         </div>
         
