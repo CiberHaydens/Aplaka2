@@ -50,7 +50,8 @@ const gallery = [
 
 function Inicio() {
   return (
-    <div className="relative pt-16 flex flex-col">
+    <>
+      <div className="relative pt-16 flex flex-col">
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
@@ -84,7 +85,8 @@ function Inicio() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -131,6 +133,7 @@ function Nosotros() {
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">
               Empresa Instaladora de Sistemas PYL con Experiencia
             </h2>
+            
             <div className="text-lg text-gray-600">
               <p className="mb-6 font-semibold text-gray-800">
                 En Aplaka2, nuestra misión es ayudarle a crear espacios mejor aprovechados y más confortables mediante la tabiquería en seco, garantizando acabados de la más alta calidad.
@@ -237,9 +240,9 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex justify-center items-center gap-2 mb-6">
-          <img src="/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png" alt="Aplaka2 Logo" className="h-10 w-auto invert brightness-0 opacity-90" />
-          <span className="font-bold text-xl tracking-tight">Aplaka2</span>
+        <div className="flex flex-col justify-center items-center mb-6">
+          <img src="/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png" alt="Aplaka2 Logo" className="h-12 w-auto invert brightness-0 opacity-90" />
+          <span className="font-bold text-xl tracking-tight -mt-2">Aplaka2</span>
         </div>
         <div className="border-t border-gray-800 pt-8 text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Aplaka2. Todos los derechos reservados.</p>
