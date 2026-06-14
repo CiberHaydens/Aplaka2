@@ -6,34 +6,39 @@ import logo from '/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png';
 
 const services = [
   {
-    title: 'Sistemas PYL',
-    description: 'Instalación profesional de sistemas de placa de yeso laminado (PYL) para tabiquería seca, techos y decoración. Soluciones duraderas y versátiles.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80'
-  },
-  {
-    title: 'Tabiques de Yeso Laminado',
-    description: 'Separación de espacios y distribución de interiores con tabiquería PYL. Montaje rápido, limpio y con excelente aislamiento termoacústico.',
+    title: 'Tabiques',
+    description: 'Instalación de tabiques de placa de yeso laminado (PYL) para distribución de interiores. Tabiquería seca rápida, limpia y con excelente aislamiento termoacústico para viviendas y oficinas.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80'
   },
   {
     title: 'Trasdosados',
-    description: 'Trasdosados directos, semidirectos y autoportantes con placas PYL. Revestimiento de muros para mejorar el aislamiento térmico y acústico.',
+    description: 'Revestimiento de muros con trasdosados directos, semidirectos y autoportantes. Mejora el aislamiento térmico y acústico de tus paredes con nuestros sistemas PYL de alta eficiencia.',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80'
   },
   {
-    title: 'Techos Continuos PYL',
-    description: 'Instalación de techos continuos de placa de yeso laminado. Falsos techos lisos y uniformes, perfectos para ocultar instalaciones y mejorar la estética.',
+    title: 'Techos continuos',
+    description: 'Montaje de falsos techos continuos lisos de yeso laminado. Solución perfecta para ocultar instalaciones, integrar iluminación LED y mejorar la estética de cualquier estancia.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80'
   },
   {
-    title: 'Techos Registrables',
-    description: 'Techos registrables con perfilería vista u oculta. Soluciones PYL modulares ideales para oficinas, locales comerciales y espacios dinámicos.',
+    title: 'Techos registrables',
+    description: 'Instalación de techos registrables modulares con perfilería vista u oculta. Ideales para locales comerciales, oficinas y espacios que requieren un mantenimiento y acceso frecuente.',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&q=80'
   },
   {
-    title: 'Aislamiento e Insonorización',
-    description: 'Proyectos de insonorización y acondicionamiento acústico mediante sistemas PYL avanzados. Garantizamos el máximo confort en su espacio.',
+    title: 'Aislamientos',
+    description: 'Proyectos de aislamiento térmico e insonorización acústica. Utilizamos materiales de primera calidad integrados en sistemas PYL para garantizar la máxima eficiencia energética y confort.',
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&q=80'
+  },
+  {
+    title: 'Foseados',
+    description: 'Diseño y creación de foseados perimetrales y candilejas en techos de yeso laminado. Diseños modernos y elegantes para iluminación indirecta LED que transforman tus espacios interiores.',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80'
+  },
+  {
+    title: 'Muebles',
+    description: 'Fabricación de muebles de obra, estanterías y librerías a medida con placas de yeso laminado. Soluciones de almacenaje integradas, totalmente personalizadas, resistentes y de diseño exclusivo.',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80'
   }
 ];
 
