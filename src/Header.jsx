@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png';
 
 const navLinks = [
   { to: '/', text: 'Inicio' },
@@ -26,9 +25,8 @@ const Header = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <NavLink to="/" className="flex flex-col items-center justify-center">
-              <img src="/image/D9351D23-6697-4DD2-AB7E-8477491E4BB2.png" alt="Aplaka2 Logo" className="h-8 w-auto invert brightness-0" />
-              <span className="font-bold text-base tracking-tight text-white -mt-1 leading-none">Aplaka2</span>
+            <NavLink to="/" className="flex items-center justify-center">
+              <img src="/image/APLAKA2-NO-BG.png" alt="Aplaka2 Logo" className="h-16 w-auto" />
             </NavLink>
           </div>
 
