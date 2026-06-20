@@ -1,45 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useSearchParams } from 'react-router-dom';
 import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
 import Header from './Header';
+import { servicesData } from './servicesData';
+import ServiceModal from './ServiceModal';
 
-const services = [
-  {
-    title: 'Tabiques',
-    description: 'Instalación de tabiques de placa de yeso laminado (PYL) para distribución de interiores. Tabiquería seca rápida, limpia y con excelente aislamiento termoacústico para viviendas y oficinas.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80'
-  },
-  {
-    title: 'Trasdosados',
-    description: 'Revestimiento de muros con trasdosados directos, semidirectos y autoportantes. Mejora el aislamiento térmico y acústico de tus paredes con nuestros sistemas PYL de alta eficiencia.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80'
-  },
-  {
-    title: 'Techos continuos',
-    description: 'Montaje de falsos techos continuos lisos de yeso laminado. Solución perfecta para ocultar instalaciones, integrar iluminación LED y mejorar la estética de cualquier estancia.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80'
-  },
-  {
-    title: 'Techos registrables',
-    description: 'Instalación de techos registrables modulares con perfilería vista u oculta. Ideales para locales comerciales, oficinas y espacios que requieren un mantenimiento y acceso frecuente.',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&q=80'
-  },
-  {
-    title: 'Aislamientos',
-    description: 'Proyectos de aislamiento térmico e insonorización acústica. Utilizamos materiales de primera calidad integrados en sistemas PYL para garantizar la máxima eficiencia energética y confort.',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&q=80'
-  },
-  {
-    title: 'Foseados',
-    description: 'Diseño y creación de foseados perimetrales y candilejas en techos de yeso laminado. Diseños modernos y elegantes para iluminación indirecta LED que transforman tus espacios interiores.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=80'
-  },
-  {
-    title: 'Muebles',
-    description: 'Fabricación de muebles de obra, estanterías y librerías a medida con placas de yeso laminado. Soluciones de almacenaje integradas, totalmente personalizadas, resistentes y de diseño exclusivo.',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80'
-  }
-];
 
 const gallery = [
   'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
@@ -68,10 +33,10 @@ function Inicio() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex items-center w-full min-h-[calc(100vh-64px)]">
         <div className="max-w-2xl py-20">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
-            Instaladores Especialistas en Sistemas PYL (Placa de Yeso Laminado)
+            Especialistas en Sistemas PYL en Málaga (instaladores de “Pladur”)
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Transformamos tus espacios con soluciones de construcción en seco rápidas, limpias y de la máxima calidad. Expertos en tabiquería PYL, falsos techos, trasdosados e insonorización a medida.
+            Transformamos tus espacios con soluciones de construcción en seco rápidas, limpias y de máxima calidad. Desde tabiques, trasdosados y techos hasta soluciones avanzadas de aislamiento térmico e insonorización a medida para tu hogar o negocio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -95,31 +60,68 @@ function Inicio() {
 }
 
 function Servicios() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const serviceId = searchParams.get('s');
+  const selectedService = servicesData.find(s => s.id === serviceId);
+
+  const openService = (id) => {
+    setSearchParams({ s: id });
+  };
+
+  const closeService = () => {
+    setSearchParams({});
+  };
+
   return (
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestros Servicios en Sistemas PYL</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mt-2">Soluciones a medida en Sistemas PYL (“Pladur”)</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrecemos soluciones integrales en instalación de placas de yeso laminado adaptadas a las necesidades de su hogar o negocio. Garantizamos los mejores acabados en construcción en seco.
+            Creamos proyectos integrales adaptamos al mílimetro tus necesidades. Somos expertos en la instalación de Sistemas de Placa de Yeso Laminado (comúnmente conocido como “Pladur”). Garantizamos acabados impecables de alta decoración.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <img src={service.image} alt={service.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+          {servicesData.map((service) => (
+            <div 
+              key={service.id} 
+              onClick={() => openService(service.id)}
+              className="group cursor-pointer bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-green-300 transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full"
+            >
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <span className="text-white text-xs font-semibold bg-green-600/90 px-3 py-1 rounded-full backdrop-blur-sm">
+                    Ver detalles completos
+                  </span>
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed flex-grow">{service.description}</p>
+                <div className="mt-5 pt-4 border-t border-gray-100 flex items-center text-green-600 font-semibold text-sm group-hover:underline">
+                  Conocer más detalles
+                  <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Render the detail pop-up modal if a service is selected */}
+      {selectedService && (
+        <ServiceModal service={selectedService} onClose={closeService} />
+      )}
     </div>
   );
 }
+
 
 function Nosotros() {
   return (
@@ -135,15 +137,12 @@ function Nosotros() {
           </div>
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">
-              Empresa Instaladora de Sistemas PYL con Experiencia
+              Experiencia y precisión en montaje de Sistemas PYL
             </h2>
             
             <div className="text-lg text-gray-600">
-              <p className="mb-6 font-semibold text-gray-800">
-                En Aplaka2, nuestra misión es ayudarle a crear espacios mejor aprovechados y más confortables mediante la tabiquería en seco, garantizando acabados de la más alta calidad.
-              </p>
-              <p className="mb-8">
-                Como expertos montadores, nos especializamos en la instalación de sistemas de placa de yeso laminado (PYL, también conocido comúnmente como Pladur) para reformas de viviendas, locales comerciales y oficinas. Ofrecemos soluciones innovadoras que combinan funcionalidad, un aislamiento termoacústico superior y un diseño interior moderno.
+              <p className="mb-8 leading-relaxed">
+                En Aplaka2, nuestra misión es ayudarle a crear espacios mejor aprovechados y confortables. Como instaladores especialistas en reformas de viviendas, comercios y oficinas, dominamos desde la tabiquería estructural hasta detalles de diseño como foseados, candilejas y mobiliario a medida, combinando estética con un aislamiento termoacústico insuperable.
               </p>
             </div>
             
@@ -167,9 +166,9 @@ function Proyectos() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Proyectos Realizados con Placa de Yeso Laminado</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Trabajos realizados en Sistemas PYL</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore algunos de nuestros trabajos recientes en instalación de tabiques, trasdosados y techos PYL. Nuestra galería se actualiza con nuevos proyectos de construcción en seco.
+            La mejor garantía es una obra bien terminada. Explora nuestros proyectos recientes en Sistemas PYL (“Pladur”). Inspiración real, estructuras sólidas y acabados profesionales en toda Málaga.
           </p>
         </div>
 
@@ -190,9 +189,9 @@ function Contacto() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Solicite Presupuesto para Sistemas PYL</h2>
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Pide tu presupuesto de Sistemas PYL sin compromiso</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            ¿Necesita un presupuesto sin compromiso para la instalación de placas de yeso laminado? Estamos aquí para asesorarle en su proyecto de reforma o construcción.
+            ¿Estás listo para dar forma a tu proyecto? Cuéntanos si necesitas renovar tus techos, aislar tu vivienda, levantar tabiques o crear muebles de diseño. Te asesoramos de forma personalizada y diseñamos un presupuesto a tu medida sin coste alguno.
           </p>
         </div>
         
