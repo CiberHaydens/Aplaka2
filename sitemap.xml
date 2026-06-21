@@ -6,11 +6,19 @@
 </url>
 
 <url>
+  <loc>https://aplaka2.es/servicios</loc>
+</url>
+
+<url>
   <loc>https://aplaka2.es/nosotros</loc>
 </url>
 
 <url>
-  <loc>https://aplaka2.es/proyecto</loc>
+  <loc>https://aplaka2.es/proyectos</loc>
+</url>
+
+<url>
+  <loc>https://aplaka2.es/contacto</loc>
 </url>
 
 </urlset>
