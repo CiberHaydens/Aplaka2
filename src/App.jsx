@@ -25,7 +25,7 @@ function Inicio() {
         <img
           src="/image/Aplaka2_BG.jpeg"
           alt="Reforma integral"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-right md:object-center"
         />
         <div className="absolute inset-0 bg-gray-900/70"></div>
       </div>
@@ -36,7 +36,7 @@ function Inicio() {
             Especialistas en Sistemas PYL en Málaga (instaladores de “Pladur”)
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Transformamos tus espacios con soluciones de construcción en seco rápidas, limpias y de máxima calidad. Desde tabiques, trasdosados y techos hasta soluciones avanzadas de aislamiento térmico e insonorización a medida para tu hogar o negocio.
+            Transformamos tus espacios con solutions de construcción en seco rápidas, limpias y de máxima calidad. Desde tabiques, trasdosados y techos hasta soluciones avanzadas de aislamiento térmico e insonorización a medida para tu hogar o negocio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
