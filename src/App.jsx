@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useSearchParams } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
 import Header from './Header';
 import { servicesData } from './servicesData';
-import ServiceModal from './ServiceModal';
+import ServiceDetailPage from './ServiceDetailPage';
 
 
 const gallery = [
@@ -32,6 +32,9 @@ function Inicio() {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex items-center w-full min-h-[calc(100vh-64px)]">
         <div className="max-w-2xl py-20">
+          <span className="text-xs md:text-sm font-semibold tracking-widest text-green-400 uppercase mb-3 block">
+            Construimos espacios, creamos confianza
+          </span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
             Especialistas en Sistemas PYL en Málaga (instaladores de “Pladur”)
           </h1>
@@ -60,18 +63,6 @@ function Inicio() {
 }
 
 function Servicios() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const serviceId = searchParams.get('s');
-  const selectedService = servicesData.find(s => s.id === serviceId);
-
-  const openService = (id) => {
-    setSearchParams({ s: id });
-  };
-
-  const closeService = () => {
-    setSearchParams({});
-  };
-
   return (
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,9 +75,9 @@ function Servicios() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicesData.map((service) => (
-            <div 
+            <Link 
               key={service.id} 
-              onClick={() => openService(service.id)}
+              to={`/servicios/${service.id}`}
               className="group cursor-pointer bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-green-300 transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full"
             >
               <div className="h-48 overflow-hidden relative">
@@ -109,15 +100,10 @@ function Servicios() {
                   <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
-
-      {/* Render the detail pop-up modal if a service is selected */}
-      {selectedService && (
-        <ServiceModal service={selectedService} onClose={closeService} />
-      )}
     </div>
   );
 }
@@ -243,8 +229,11 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex justify-center items-center mb-6">
+        <div className="flex flex-col items-center justify-center mb-6">
           <img src="/image/APLAKA2-NO-BG.png" alt="Aplaka2 Logo" className="h-16 w-auto opacity-90" />
+          <p className="mt-3 text-sm text-gray-400 tracking-wider font-light">
+            Construimos espacios, creamos confianza
+          </p>
         </div>
         <div className="border-t border-gray-800 pt-8 text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Aplaka2. Todos los derechos reservados.</p>
@@ -264,6 +253,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/servicios" element={<Servicios />} />
+            <Route path="/servicios/:serviceId" element={<ServiceDetailPage />} />
             <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/contacto" element={<Contacto />} />
