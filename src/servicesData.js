@@ -3,7 +3,7 @@ export const servicesData = [
     id: 'tabiques',
     title: 'Tabiques',
     description: 'Sistemas de construcción en seco ideales para crear y dividir espacios interiores de forma rápida y limpia. Gracias a su diseño versátil, ofrecen soluciones eficientes y de alta calidad tanto en viviendas como en espacios comerciales.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+    image: '/image/service_tabiques.jpg',
     intro: 'Los tabiques de Placa de Yeso Laminado (PYL), también conocidos como Pladur, son sistemas ligeros no portantes. Están formados por una estructura de perfiles de acero galvanizado (canales y montantes) y placas atornilladas a ambos lados.',
     sections: [
       {
@@ -73,7 +73,7 @@ export const servicesData = [
     id: 'trasdosados',
     title: 'Trasdosados',
     description: 'Sistema eficaz para renovar y mejorar paredes existentes. Son ideales tanto para proyectos de rehabilitación como en obra nueva, gracias a su versatilidad, rapidez de instalación y alto rendimiento.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+    image: '/image/service_trasdosados.jpg',
     intro: 'Los trasdosados de Placa de Yeso Laminado (PYL) son revestimientos interiores de muros diseñados para mejorar el aislamiento térmico/acústico y ocultar instalaciones. Se dividen en tres tipos principales según su método de instalación:',
     sections: [
       {
@@ -117,7 +117,7 @@ export const servicesData = [
     id: 'techos-continuos',
     title: 'Techos continuos',
     description: 'Falsos techos formados por placas con juntas tratadas para conseguir una superficie lisa y uniforme. Se instalan suspendidos mediante perfilería oculta, permiten ocultar instalaciones y lograr acabados limpios y minimalistas.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    image: '/image/service_techos_continuos.jpg',
     intro: 'Los techos continuos de Placa de Yeso Laminado (PYL) son sistemas de falso techo formados por una estructura metálica oculta sobre la que se atornillan las placas, logrando una superficie lisa y uniforme sin juntas visibles.',
     sections: [
       {
@@ -178,7 +178,7 @@ export const servicesData = [
     id: 'techos-registrables',
     title: 'Techos registrables o desmontables',
     description: 'Falsos techos formados por una estructura de perfiles vistos en forma de cuadrícula, sobre la que se colocan placas desmontables. Su principal ventaja es que permiten acceder fácilmente al espacio superior para instalaciones, mantenimiento o reparaciones sin necesidad de obra posterior.',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
+    image: '/image/service_techos_registrables.jpg',
     intro: 'Los techos registrables (o desmontables) son sistemas modulares suspendidos de la estructura original que permiten ocultar instalaciones y acceder fácilmente a ellas.',
     sections: [
       {
@@ -208,7 +208,7 @@ export const servicesData = [
     id: 'aislamientos',
     title: 'Aislamientos',
     description: 'Materiales que se instalan en el interior de los diferentes sistemas PYL ( tabiques, trasdosados, falsos techos…) dentro de sus estructuras y cámaras de aire. Aunque la placa de yeso aporta rigidez y acabado, estos aislamientos son los que garantizan un mayor rendimiento térmico y acústico, mejorando notablemente el confort del espacio. Reduce drásticamente el gasto energético de la vivienda o comercio.',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
+    image: '/image/service_aislamientos.jpg',
     intro: 'El aislamiento en sistemas de Placa de Yeso Laminado (PYL), conocido comúnmente como Pladur, combina placas especializadas y materiales de relleno. Se dividen en función de si el objetivo es térmico, acústico o cortafuegos.',
     sections: [
       {
@@ -239,7 +239,7 @@ export const servicesData = [
     id: 'foseados',
     title: 'Foseados / Candilejas',
     description: 'Los foseados y candilejas de Pladur (Placa de Yeso Laminado - PYL) son rebajes en techos o paredes diseñados para ocultar tiras LED y lograr una luz indirecta y elegante. Se diferencian principalmente por su ubicación y la dirección en la que proyectan la luz.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+    image: '/image/service_foseados.jpg',
     intro: 'Los foseados y candilejas de Pladur (Placa de Yeso Laminado - PYL) son rebajes en techos o paredes diseñados para ocultar tiras LED y lograr una luz indirecta y elegante.',
     sections: [
       {
@@ -259,7 +259,7 @@ export const servicesData = [
     id: 'muebles',
     title: 'Muebles',
     description: 'Elemento constructivo de PYL realizado a medida e integrado en la propia arquitectura de la vivienda, como si formara parte de la pared. Se ejecuta mediante una estructura metálica recubierta con placas, que posteriormente se sellan, lijan y pintan, logrando un acabado uniforme, limpio y totalmente integrado en el espacio.',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
+    image: '/image/service_muebles.jpg',
     intro: 'Los muebles de PYL (Placas de Yeso Laminado) o pladur son estructuras de obra seca hechas a medida. Se dividen en varias tipologías dependiendo de su función y fabricación:',
     sections: [
       {
@@ -287,7 +287,7 @@ export const servicesData = [
     id: 'acabados',
     title: 'Acabados',
     description: 'Los acabados de pladur (placa de yeso laminado) se clasifican oficialmente en cuatro niveles de calidad (de Q1 a Q4), definidos por la normativa europea. El nivel que elijas determina el tipo de revestimiento final que puedes aplicar, como pintura, papel pintado o azulejos.',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
+    image: '/image/service_acabados.jpg',
     intro: 'Los acabados de pladur (placa de yeso laminado) se clasifican oficialmente en cuatro niveles de calidad (de Q1 a Q4), definidos por la normativa europea. El nivel que elijas determina el tipo de revestimiento final que puedes aplicar.',
     sections: [
       {

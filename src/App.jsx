@@ -235,8 +235,11 @@ function Footer() {
             Construimos espacios, creamos confianza
           </p>
         </div>
-        <div className="border-t border-gray-800 pt-8 text-sm text-gray-500">
+        <div className="border-t border-gray-800 pt-8 text-sm text-gray-500 space-y-2">
           <p>&copy; {new Date().getFullYear()} Aplaka2. Todos los derechos reservados.</p>
+          <p className="text-[11px] text-gray-500 font-light max-w-xl mx-auto leading-relaxed">
+            Nota: Algunas imágenes técnicas del catálogo han sido generadas mediante inteligencia artificial con fines puramente ilustrativos y explicativos de los sistemas de construcción.
+          </p>
         </div>
       </div>
     </footer>

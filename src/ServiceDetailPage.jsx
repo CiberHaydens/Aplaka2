@@ -10,7 +10,6 @@ import {
   Flame, 
   Shield, 
   Volume2,
-  ChevronRight,
   X
 } from 'lucide-react';
 import { servicesData } from './servicesData';
@@ -57,13 +56,13 @@ const getItemImage = (itemName) => {
 
   // Ceilings
   if (normalized.includes('techos directos')) {
-    return 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80';
+    return '/image/techos_directos.jpg';
   }
   if (normalized.includes('simples') || normalized.includes('tc')) {
-    return 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80';
+    return '/image/techos_suspendidos_simples.jpg';
   }
   if (normalized.includes('dobles')) {
-    return 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80';
+    return '/image/techos_suspendidos_dobles.jpg';
   }
   if (normalized.includes('biapoyados') || normalized.includes('desmontables') || normalized.includes('registrables')) {
     return 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80';
@@ -264,22 +263,12 @@ export default function ServiceDetailPage() {
           <img 
             src={service.image} 
             alt={service.title} 
-            className="w-full h-full object-cover opacity-35 cursor-zoom-in hover:opacity-40 transition-opacity"
-            onClick={() => setActiveLightboxImg(service.image)}
+            className="w-full h-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent pointer-events-none"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white pointer-events-none">
-          {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs text-gray-300 font-medium uppercase tracking-wider mb-4 pointer-events-auto">
-            <Link to="/" className="hover:text-white transition-colors">Inicio</Link>
-            <ChevronRight className="h-3.5 w-3.5 text-gray-500" />
-            <Link to="/servicios" className="hover:text-white transition-colors">Servicios</Link>
-            <ChevronRight className="h-3.5 w-3.5 text-gray-500" />
-            <span className="text-green-400 font-semibold">{service.title}</span>
-          </nav>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight leading-none mb-6">
             {service.title}
           </h1>
@@ -319,12 +308,11 @@ export default function ServiceDetailPage() {
               Ofrecemos soluciones constructivas avanzadas en Málaga, adaptando cada placa de yeso, perfiles y aislamientos para ajustarse rigurosamente a las normativas técnicas y a tus demandas estéticas y funcionales.
             </p>
           </div>
-          <div className="lg:col-span-5 h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md cursor-zoom-in">
+          <div className="lg:col-span-5 h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md">
             <img 
               src={service.image} 
               alt={service.title} 
-              className="w-full h-full object-cover hover:opacity-95 transition-opacity" 
-              onClick={() => setActiveLightboxImg(service.image)}
+              className="w-full h-full object-cover" 
             />
           </div>
         </div>
