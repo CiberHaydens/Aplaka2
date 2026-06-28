@@ -37,6 +37,8 @@ export default function ServiceModal({ service, onClose }) {
       case 'structures':
       case 'insulators':
       case 'foseados_list':
+      case 'insulators_simple':
+      case 'furniture_types':
         return (
           <div key={index} className="space-y-3">
             {renderSectionHeader(section.title, section.description)}

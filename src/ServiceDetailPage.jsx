@@ -39,7 +39,7 @@ const getItemImage = (itemName) => {
   if (normalized.includes('alta dureza') || normalized.includes('tipo i')) {
     return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80'; // high transit corridor
   }
-  if (normalized.includes('aislamiento acústico') || normalized.includes('tipo d') || normalized.includes('acústicas')) {
+  if (normalized.includes('aislamiento acústico') || normalized.includes('tipo d') || normalized.includes('acústica')) {
     return 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80'; // sound proof/studio setting
   }
 
@@ -135,10 +135,11 @@ export default function ServiceDetailPage() {
 
   const renderItemIcon = (iconName, colorClass) => {
     const IconComponent = iconMap[iconName] || FileText;
-    let textCol = 'text-blue-500';
+    let textCol = 'text-slate-500'; // Default/Fallback to slate grey
+    if (colorClass === 'blue') textCol = 'text-slate-500'; // Grey/Slate for Estándar (Blanco/Gris)
     if (colorClass === 'teal') textCol = 'text-teal-500';
     if (colorClass === 'rose') textCol = 'text-rose-500';
-    if (colorClass === 'indigo') textCol = 'text-indigo-500';
+    if (colorClass === 'indigo') textCol = 'text-amber-500'; // Amber/Yellow for Alta Dureza
     if (colorClass === 'purple') textCol = 'text-purple-500';
     if (colorClass === 'green') textCol = 'text-green-500';
 
