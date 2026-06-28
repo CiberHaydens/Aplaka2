@@ -239,7 +239,7 @@ export const servicesData = [
   {
     id: 'aislamientos',
     title: 'Aislamientos',
-    description: 'Materiales que se instalan en el interior de los diferentes sistemas PYL ( tabiques, trasdosados, falsos techos…) dentro de sus estructuras y cámaras de aire. Aunque la placa de yeso aporta rigidez y acabado, estos aislamientos son los que garantizan un mayor rendimiento térmico y acústico, mejorando notablemente el confort del espacio. Reduce drácticamente el gasto energético de la vivienda o comercio.',
+    description: 'Materiales que se instalan en el interior de los diferentes sistemas PYL dentro de sus estructuras y cámaras de aire. Aunque la placa de yeso aporta rigidez y acabado, estos aislamientos son los que garantizan un mayor rendimiento térmico y acústico, mejorando notablemente el confort del espacio. Reduce drásticamente el gasto energético de la vivienda o comercio.',
     image: '/image/service_aislamientos.jpg',
     intro: 'El aislamiento en sistemas de Placa de Yeso Laminado (PYL) combina placas especializadas y materiales de relleno para mejorar el comportamiento térmico, acústico o de resistencia al fuego de paredes y techos.',
     sections: [
@@ -267,7 +267,7 @@ export const servicesData = [
   {
     id: 'foseados',
     title: 'Foseados / Candilejas',
-    description: 'Los foseados y candilejas de Pladur (Placa de Yeso Laminado - PYL) son rebajes en techos o paredes diseñados para ocultar tiras LED y lograr una luz indirecta y elegante. Se diferencian principalmente por su ubicación y la dirección en la que proyectan la luz.',
+    description: 'Los foseados y candilejas de Placa de Yeso Laminado son rebajes en techos o paredes diseñados para ocultar tiras LED y lograr una luz indirecta y elegante. Se diferencian principalmente por su ubicación y la dirección en la que proyectan la luz.',
     image: '/image/service_foseados.jpg',
     intro: 'Los foseados y candilejas de Placa de Yeso Laminado (PYL) son rebajes en techos o paredes diseñados para ocultar tiras LED y conseguir una iluminación indirecta y elegante.',
     sections: [
@@ -313,7 +313,7 @@ export const servicesData = [
   {
     id: 'acabados',
     title: 'Acabados',
-    description: 'Los acabados de pladur (placa de yeso laminado) se clasifican oficialmente en cuatro niveles de calidad (de Q1 a Q4), definidos por la normativa europea. El nivel que elijas determina el tipo de revestimiento final que puedes aplicar, como pintura, papel pintado o azulejos.',
+    description: 'Los acabados de placa de yeso laminado se clasifican oficialmente en cuatro niveles de calidad (de Q1 a Q4), definidos por la normativa europea. El nivel que elijas determina el tipo de revestimiento final que puedes aplicar, como pintura, papel pintado o azulejos.',
     image: '/image/service_acabados.jpg',
     intro: 'Los acabados de Placa de Yeso Laminado (PYL) se clasifican en cuatro niveles de calidad (Q1 a Q4), definidos por normativa europea. El nivel elegido determina qué tipo de revestimiento final se puede aplicar sobre la superficie.',
     sections: [

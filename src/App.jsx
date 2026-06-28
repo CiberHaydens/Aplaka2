@@ -39,7 +39,7 @@ function Inicio() {
             Especialistas en Sistemas PYL en Málaga (instaladores de “Pladur”)
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Transformamos tus espacios con solutions de construcción en seco rápidas, limpias y de máxima calidad. Desde tabiques, trasdosados y techos hasta soluciones avanzadas de aislamiento térmico e insonorización a medida para tu hogar o negocio.
+            Transformamos tus espacios con soluciones de construcción en seco rápidas, limpias y de máxima calidad. Desde tabiques, trasdosados y techos hasta soluciones avanzadas de aislamiento térmico e insonorización a medida para tu hogar o negocio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
@@ -69,7 +69,7 @@ function Servicios() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mt-2">Soluciones a medida en Sistemas PYL (“Pladur”)</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            Creamos proyectos integrales adaptamos al mílimetro tus necesidades. Somos expertos en la instalación de Sistemas de Placa de Yeso Laminado (comúnmente conocido como “Pladur”). Garantizamos acabados impecables de alta decoración.
+            Te ayudamos a transformar tus espacios con soluciones en Placa de Yeso Laminado (comúnmente conocido como “Pladur”) totalmente adaptadas a lo que necesitas. Cuidamos cada detalle de la instalación para que el resultado sea cómodo, funcional y con un acabado limpio y de calidad.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ function Nosotros() {
             
             <div className="text-lg text-gray-600">
               <p className="mb-8 leading-relaxed">
-                En Aplaka2, nuestra misión es ayudarle a crear espacios mejor aprovechados y confortables. Como instaladores especialistas en reformas de viviendas, comercios y oficinas, dominamos desde la tabiquería estructural hasta detalles de diseño como foseados, candilejas y mobiliario a medida, combinando estética con un aislamiento termoacústico insuperable.
+                En Aplaka2, nuestra misión es ayudarte a crear espacios mejor aprovechados y confortables. Como instaladores especialistas en reformas de viviendas, comercios y oficinas, dominamos desde la tabiquería estructural hasta detalles de diseño como foseados, candilejas y mobiliario a medida, combinando estética con un aislamiento termoacústico insuperable.
               </p>
             </div>
             
