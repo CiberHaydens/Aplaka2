@@ -305,9 +305,6 @@ export default function ServiceDetailPage() {
             <p className="text-sm sm:text-base text-gray-650 leading-relaxed font-light mb-4">
               {service.intro || service.description}
             </p>
-            <p className="text-sm sm:text-base text-gray-650 leading-relaxed font-light">
-              Ofrecemos soluciones constructivas avanzadas en Málaga, adaptando cada placa de yeso, perfiles y aislamientos para ajustarse rigurosamente a las normativas técnicas y a tus demandas estéticas y funcionales.
-            </p>
           </div>
           <div className="lg:col-span-5 h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md">
             <img 

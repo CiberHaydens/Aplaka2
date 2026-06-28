@@ -337,7 +337,7 @@ export const servicesData = [
           },
           {
             name: 'Q3: Acabado Especial',
-            how: 'Incluye el Q2 más enlucido de juntas y una capa fina de masilla sobre toda la placa.',
+            how: 'Incluye el Q2 más un enlucido de juntas y una capa fina de masilla sobre toda la placa.',
             looks: 'Superficie muy lisa, sin rebabas ni huellas de espátula.',
             use: 'Obligatorio para pinturas mates lisas o papeles pintados finos.',
             color: 'indigo'
