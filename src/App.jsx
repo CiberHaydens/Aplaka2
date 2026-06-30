@@ -4,6 +4,11 @@ import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
 import Header from './Header';
 import { servicesData } from './servicesData';
 import ServiceDetailPage from './ServiceDetailPage';
+import UnderConstruction from './UnderConstruction';
+
+// Cambiar a false para mostrar la web completa
+const UNDER_CONSTRUCTION = true;
+
 
 
 const gallery = [
@@ -247,6 +252,10 @@ function Footer() {
 }
 
 export default function App() {
+  if (UNDER_CONSTRUCTION) {
+    return <UnderConstruction />;
+  }
+
   return (
     <Router>
       <div className="font-sans text-gray-800 min-h-screen flex flex-col">
