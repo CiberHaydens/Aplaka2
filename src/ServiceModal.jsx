@@ -161,7 +161,7 @@ export default function ServiceModal({ service, onClose }) {
         <div className="border-t border-gray-150 px-6 py-4 bg-gray-50 flex flex-col sm:flex-row gap-3 sm:justify-end shrink-0">
           <button
             onClick={onClose}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 border border-gray-300 rounded-xl text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 border border-gray-300 rounded-xl text-sm font-audiowide font-semibold text-gray-700 bg-white hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer"
           >
             Cerrar
           </button>
@@ -169,7 +169,7 @@ export default function ServiceModal({ service, onClose }) {
             href={`https://wa.me/34685554188?text=${encodedMessage}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 border border-transparent rounded-xl text-sm font-semibold text-white bg-green-600 hover:bg-green-700 shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 border border-transparent rounded-xl text-sm font-audiowide font-semibold text-white bg-green-600 hover:bg-green-700 shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer"
           >
             <Phone className="mr-2 h-4 w-4 fill-current text-white" />
             Solicitar Presupuesto

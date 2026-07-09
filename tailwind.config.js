@@ -11,6 +11,9 @@ module.exports = {
         secondary: '#3b82f6',
         accent: '#f59e0b',
       },
+      fontFamily: {
+        audiowide: ['Audiowide', 'sans-serif'],
+      },
     },
   },
   plugins: [],

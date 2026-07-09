@@ -29,9 +29,9 @@ export default function UnderConstruction() {
 
           {/* Integrated Action / Contact Section */}
           <div className="mt-4 pt-4 border-t border-white/5 flex flex-col items-center gap-3 shrink-0">
-            <p className="text-xs sm:text-sm font-semibold tracking-wider text-slate-300 text-center">
+            <h2 className="text-xs sm:text-sm font-semibold tracking-wider text-green-400 text-center uppercase">
               ¿Necesitas un presupuesto o consulta urgente?
-            </p>
+            </h2>
             
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center">
               {/* WhatsApp Button */}
@@ -39,7 +39,7 @@ export default function UnderConstruction() {
                 href="https://wa.me/34685554188"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-extrabold rounded-xl text-slate-950 bg-green-500 hover:bg-green-400 active:scale-95 transition-all shadow-lg shadow-green-500/10"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-audiowide font-bold rounded-xl text-slate-950 bg-green-500 hover:bg-green-400 active:scale-95 transition-all shadow-lg shadow-green-500/10"
               >
                 <Phone className="h-4.5 w-4.5 fill-slate-950" />
                 Contactar por WhatsApp
@@ -47,8 +47,8 @@ export default function UnderConstruction() {
 
               {/* Email Button */}
               <a
-                href="mailto:aplakados@gmail.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-bold rounded-xl text-white bg-white/15 hover:bg-white/25 border border-white/10 active:scale-95 transition-all shadow-lg"
+                href="mailto:info@aplaka2.es"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-audiowide font-bold rounded-xl text-white bg-white/15 hover:bg-white/25 border border-white/10 active:scale-95 transition-all shadow-lg"
               >
                 <Mail className="h-4.5 w-4.5" />
                 Enviar un Email

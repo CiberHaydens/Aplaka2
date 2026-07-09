@@ -331,14 +331,14 @@ export default function ServiceDetailPage() {
               href={`https://wa.me/34685554188?text=${encodedMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 border border-transparent rounded-xl text-sm font-bold text-green-700 bg-white hover:bg-gray-50 shadow-md transition-all duration-300 shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 border border-transparent rounded-xl text-sm font-audiowide font-bold text-green-700 bg-white hover:bg-gray-50 shadow-md transition-all duration-300 shrink-0"
             >
               <Phone className="mr-2 h-4 w-4 fill-current text-green-700" />
               WhatsApp Directo
             </a>
             <a
-              href={`mailto:aplakados@gmail.com?subject=Presupuesto%20de%20${encodeURIComponent(service.title)}&body=Hola%20Aplaka2,%20me%2520gustaría%2520solicitar%2520un%2520presupuesto%2520para...`}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 border border-white/20 hover:border-white/30 rounded-xl text-sm font-bold text-white bg-green-700 hover:bg-green-800 transition-all duration-300 shrink-0"
+              href={`mailto:info@aplaka2.es?subject=Presupuesto%20de%20${encodeURIComponent(service.title)}&body=Hola%20Aplaka2,%20me%2520gustaría%2520solicitar%2520un%2520presupuesto%2520para...`}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 border border-white/20 hover:border-white/30 rounded-xl text-sm font-audiowide font-bold text-white bg-green-700 hover:bg-green-800 transition-all duration-300 shrink-0"
             >
               <Mail className="mr-2 h-4 w-4 text-white" />
               Enviar Email

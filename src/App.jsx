@@ -7,7 +7,7 @@ import ServiceDetailPage from './ServiceDetailPage';
 import UnderConstruction from './UnderConstruction';
 
 // Cambiar a false para mostrar la web completa
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = false;
 
 
 
@@ -51,11 +51,11 @@ function Inicio() {
               href="https://wa.me/34685554188"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-audiowide font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition-colors shadow-lg hover:shadow-xl"
             >
               Contactar por WhatsApp
             </a>
-            <a href="mailto:aplakados@gmail.com" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-green-700 bg-white hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl">
+            <a href="mailto:info@aplaka2.es" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-audiowide font-medium rounded-md text-green-700 bg-white hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl">
               <Mail className="mr-2 h-5 w-5" />
               Enviar un Email
             </a>
@@ -204,7 +204,7 @@ function Contacto() {
 
           {/* Email */}
           <a 
-            href="mailto:aplakados@gmail.com"
+            href="mailto:info@aplaka2.es"
             className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
           >
             <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
@@ -212,7 +212,7 @@ function Contacto() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Envíanos un Email</h3>
             <p className="text-gray-600 mb-4 flex-grow">Escríbenos con los detalles de tu proyecto y te responderemos pronto.</p>
-            <span className="text-lg font-semibold text-blue-600">aplakados@gmail.com</span>
+            <span className="text-lg font-semibold text-blue-600">info@aplaka2.es</span>
           </a>
 
           {/* Ubicación */}
@@ -252,7 +252,16 @@ function Footer() {
 }
 
 export default function App() {
-  if (UNDER_CONSTRUCTION) {
+  // Permite saltarse la pantalla de construcción con "?preview=true" en la URL o si ya se visitó
+  const isPreview = typeof window !== 'undefined' && 
+    (new URLSearchParams(window.location.search).get('preview') === 'true' || 
+     localStorage.getItem('preview') === 'true');
+
+  if (isPreview && typeof window !== 'undefined' && localStorage.getItem('preview') !== 'true') {
+    localStorage.setItem('preview', 'true');
+  }
+
+  if (UNDER_CONSTRUCTION && !isPreview) {
     return <UnderConstruction />;
   }
 

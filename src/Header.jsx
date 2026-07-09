@@ -37,7 +37,7 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
-                className="text-green-50 hover:text-white font-medium transition-colors duration-300"
+                className="text-green-50 hover:text-white font-audiowide font-medium transition-colors duration-300"
               >
                 {link.text}
               </NavLink>
@@ -74,7 +74,7 @@ const Header = () => {
                 to={link.to}
                 style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
                 onClick={() => setIsOpen(false)} // Close menu on click
-                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-green-700"
+                className="block px-3 py-2 rounded-md text-base font-audiowide font-medium text-white hover:bg-green-700"
               >
                 {link.text}
               </NavLink>
