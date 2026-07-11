@@ -1,25 +1,250 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, CheckCircle, ChevronRight } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye } from 'lucide-react';
 import Header from './Header';
 import { servicesData } from './servicesData';
 import ServiceDetailPage from './ServiceDetailPage';
 import UnderConstruction from './UnderConstruction';
 
 // Cambiar a false para mostrar la web completa
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = false;
 
 
 
-const gallery = [
-  'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
-  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
-  'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
-  'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
-  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'
+const projectsGallery = [
+  // TV Oculta en Techo Project (Video + Images)
+  {
+    id: 'tv-1',
+    type: 'video',
+    url: '/image/proyectos/tv-oculta/video.mp4',
+    thumbnail: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
+    title: 'Mecanismo motorizado de TV oculta en techo',
+    category: 'tv-oculta',
+    description: 'Demostración del funcionamiento del soporte motorizado que oculta y desciende la televisión integrada en el techo de Pladur.'
+  },
+  {
+    id: 'tv-2',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_1.webp',
+    title: 'Instalación de la estructura del techo',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-3',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_2.webp',
+    title: 'Estructura metálica del falso techo',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-4',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_3.webp',
+    title: 'Preparación de instalaciones eléctricas',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-5',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_4.webp',
+    title: 'Placas de Pladur atornilladas',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-6',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
+    title: 'Acabado y masillado de juntas',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-7',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_6.webp',
+    title: 'Techo terminado y pintado',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-8',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_7.webp',
+    title: 'Mecanismo en posición oculta',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-9',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_8.webp',
+    title: 'Mecanismo en posición desplegada',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-10',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_9.webp',
+    title: 'Detalle de la integración estética',
+    category: 'tv-oculta'
+  },
+  {
+    id: 'tv-11',
+    type: 'image',
+    url: '/image/proyectos/tv-oculta/tv_oculta_10.webp',
+    title: 'Pruebas finales de funcionamiento',
+    category: 'tv-oculta'
+  },
+
+  // Proyecto: Librería de Pladur
+  {
+    id: 'libreria-img-1',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_1.webp',
+    title: 'Replanteo y diseño de la estantería',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-2',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_2.webp',
+    title: 'Montaje de estructura metálica perimetral',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-3',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_3.webp',
+    title: 'Refuerzos interiores para soportar peso',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-4',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_4.webp',
+    title: 'Cableado y cajas de luz integradas',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-5',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_5.webp',
+    title: 'Atornillado de placas de yeso en laterales',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-6',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_6.webp',
+    title: 'Revestimiento de baldas horizontales',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-7',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_7.webp',
+    title: 'Perfilería cantonera de protección',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-8',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_8.webp',
+    title: 'Aplicación de pasta para juntas',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-9',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_9.webp',
+    title: 'Lijado de precisión y afinado',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-10',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_10.webp',
+    title: 'Pintura de imprimación y acabado',
+    category: 'libreria'
+  },
+  {
+    id: 'libreria-img-11',
+    type: 'image',
+    url: '/image/proyectos/libreria/libreria_11.webp',
+    title: 'Librería de Pladur terminada',
+    category: 'libreria'
+  },
+
+  // Proyecto: Cajón cubre mueble de cocina
+  {
+    id: 'cajon-cocina-img-1',
+    type: 'image',
+    url: '/image/proyectos/cajon-cocina/cajon-cocina_1.webp',
+    title: 'Estructura superior de ocultación',
+    category: 'cajon-cocina'
+  },
+  {
+    id: 'cajon-cocina-img-2',
+    type: 'image',
+    url: '/image/proyectos/cajon-cocina/cajon-cocina_2.webp',
+    title: 'Estructura con esquina',
+    category: 'cajon-cocina'
+  },
+  {
+    id: 'cajon-cocina-img-3',
+    type: 'image',
+    url: '/image/proyectos/cajon-cocina/cajon-cocina_3.webp',
+    title: 'Cajón de cocina terminado y masillado',
+    category: 'cajon-cocina'
+  },
+
+  // General Pladur Projects (original unsplash items)
+  {
+    id: 'gen-1',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+    title: 'Techos decorativos con foseados y luces LED',
+    category: 'otros'
+  },
+  {
+    id: 'gen-2',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+    title: 'Tabiquería comercial en locales y oficinas',
+    category: 'otros'
+  },
+  {
+    id: 'gen-3',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+    title: 'Muebles a medida y estanterías de pladur',
+    category: 'otros'
+  },
+  {
+    id: 'gen-4',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    title: 'Instalación de techos registrables en oficinas',
+    category: 'otros'
+  },
+  {
+    id: 'gen-5',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
+    title: 'Aislamiento acústico de paredes medianeras',
+    category: 'otros'
+  },
+  {
+    id: 'gen-6',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
+    title: 'Techos continuos para cocinas y baños',
+    category: 'otros'
+  },
+  {
+    id: 'gen-7',
+    type: 'image',
+    url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
+    title: 'Falsos techos para aislamiento térmico',
+    category: 'otros'
+  }
 ];
 
 function Inicio() {
@@ -152,25 +377,305 @@ function Nosotros() {
   );
 }
 
-function Proyectos() {
+function VideoGridItem({ item, onClick }) {
+  const videoRef = React.useRef(null);
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!videoRef.current) return;
+    if (isHovered) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Play prevented:", error);
+        });
+      }
+    } else {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  }, [isHovered]);
+
   return (
-    <div className="pt-28 pb-20 bg-gray-50">
+    <div
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative w-full h-64 overflow-hidden rounded-xl bg-black cursor-pointer group border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+    >
+      <video
+        ref={videoRef}
+        src={item.url}
+        poster={item.thumbnail}
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 flex flex-col justify-between p-4">
+        <div className="self-start">
+          <span className="bg-green-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1">
+            <Play className="h-3 w-3 fill-current" /> Vídeo
+          </span>
+        </div>
+        
+        {/* Play hover effect icon in center */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-12 h-12 bg-white/10 group-hover:bg-white/95 rounded-full flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <Play className="h-5 w-5 text-green-600 fill-current ml-0.5" />
+          </div>
+        </div>
+
+        <div className="mt-auto pointer-events-none">
+          <h3 className="text-white font-bold text-base line-clamp-1">{item.title}</h3>
+          {item.description && (
+            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{item.description}</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ImageGridItem({ item, onClick }) {
+  return (
+    <div
+      onClick={onClick}
+      className="relative w-full h-64 overflow-hidden rounded-xl bg-gray-100 cursor-pointer group border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+    >
+      <img
+        src={item.url}
+        alt={item.title}
+        loading="lazy"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 flex flex-col justify-between p-4">
+        <div className="self-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="bg-white/95 text-gray-800 text-[10px] font-bold px-2.5 py-1 rounded shadow-sm">
+            Fotos
+          </span>
+        </div>
+
+        {/* View hover icon in center */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-12 h-12 bg-white/95 rounded-full flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <Eye className="h-5 w-5 text-green-600" />
+          </div>
+        </div>
+
+        <div className="mt-auto pointer-events-none">
+          <h3 className="text-white font-bold text-base line-clamp-1">{item.title}</h3>
+          {item.description && (
+            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{item.description}</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
+  const currentItem = items[activeIndex];
+  if (!currentItem) return null;
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col justify-between p-4 md:p-6 select-none"
+      onClick={onClose}
+    >
+      {/* Top bar */}
+      <div className="flex justify-between items-center w-full z-10 text-white">
+        <div className="text-sm font-semibold tracking-wider bg-black/40 px-3 py-1 rounded-full">
+          {activeIndex + 1} / {items.length}
+        </div>
+        <button
+          onClick={onClose}
+          className="text-white hover:text-green-400 p-2 hover:bg-white/10 rounded-full transition-all duration-200 cursor-pointer"
+        >
+          <X className="h-7 w-7" />
+        </button>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="flex items-center justify-between w-full flex-grow my-4 gap-2 relative">
+        {/* Prev Button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+          className="absolute left-2 md:left-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
+          aria-label="Anterior"
+        >
+          <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+        </button>
+
+        {/* Media Container */}
+        <div 
+          className="flex items-center justify-center flex-grow max-h-[70vh] w-full"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {currentItem.type === 'video' ? (
+            <video
+              src={currentItem.url}
+              controls
+              autoPlay
+              playsInline
+              className="max-h-[70vh] max-w-[85vw] md:max-w-[70vw] rounded-lg shadow-2xl border border-white/10"
+            />
+          ) : (
+            <img
+              src={currentItem.url}
+              alt={currentItem.title}
+              className="max-h-[70vh] max-w-[85vw] md:max-w-[70vw] object-contain rounded-lg shadow-2xl border border-white/10"
+            />
+          )}
+        </div>
+
+        {/* Next Button */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          className="absolute right-2 md:right-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
+          aria-label="Siguiente"
+        >
+          <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+        </button>
+      </div>
+
+      {/* Caption / Description Bar */}
+      <div 
+        className="w-full text-center max-w-3xl mx-auto p-4 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 mb-2 animate-fade-in"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h2 className="text-white text-base md:text-lg font-bold tracking-wide">
+          {currentItem.title}
+        </h2>
+        {currentItem.description && (
+          <p className="text-gray-300 text-xs md:text-sm mt-2 font-light leading-relaxed">
+            {currentItem.description}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Proyectos() {
+  const [activeTab, setActiveTab] = React.useState('todos');
+  const [lightboxIndex, setLightboxIndex] = React.useState(null);
+
+  // Filter items based on active tab
+  const filteredGallery = React.useMemo(() => {
+    if (activeTab === 'todos') return projectsGallery;
+    return projectsGallery.filter(item => item.category === activeTab);
+  }, [activeTab]);
+
+  const handlePrev = React.useCallback(() => {
+    setLightboxIndex((prevIndex) => {
+      if (prevIndex === null) return null;
+      return prevIndex === 0 ? filteredGallery.length - 1 : prevIndex - 1;
+    });
+  }, [filteredGallery]);
+
+  const handleNext = React.useCallback(() => {
+    setLightboxIndex((prevIndex) => {
+      if (prevIndex === null) return null;
+      return prevIndex === filteredGallery.length - 1 ? 0 : prevIndex + 1;
+    });
+  }, [filteredGallery]);
+
+  // Handle keyboard shortcuts
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (lightboxIndex === null) return;
+      if (e.key === 'Escape') {
+        setLightboxIndex(null);
+      } else if (e.key === 'ArrowLeft') {
+        handlePrev();
+      } else if (e.key === 'ArrowRight') {
+        handleNext();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, handlePrev, handleNext]);
+
+  return (
+    <div className="pt-28 pb-20 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Trabajos realizados en Sistemas PYL</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-            La mejor garantía es una obra bien terminada. Explora nuestros proyectos recientes en Sistemas PYL (“Pladur”). Inspiración real, estructuras sólidas y acabados profesionales en toda Málaga.
+        {/* Title Section */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Trabajos Realizados en Sistemas PYL</h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            La mejor garantía es una obra bien terminada. Explora nuestra galería interactiva de proyectos recientes en Málaga: techos continuos, insonorizaciones y diseños exclusivos en placa de yeso laminado (Pladur).
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {gallery.map((img, index) => (
-            <div key={index} className="overflow-hidden rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-200 cursor-pointer">
-              <img src={img} alt={`Proyecto ${index + 1}`} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
-            </div>
+        {/* Tab Filters */}
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10">
+          {[
+            { id: 'todos', name: 'Todos los trabajos' },
+            { id: 'tv-oculta', name: 'Techo con TV Oculta' },
+            { id: 'libreria', name: 'Librerías de Pladur' },
+            { id: 'cajon-cocina', name: 'Cajón Cocina' },
+            { id: 'otros', name: 'Otros Proyectos' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => {
+                setLightboxIndex(null);
+                setActiveTab(tab.id);
+              }}
+              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === tab.id
+                  ? 'bg-green-600 text-white shadow-md shadow-green-600/20'
+                  : 'bg-white text-gray-600 border border-gray-200 hover:border-green-300 hover:text-green-600'
+              }`}
+            >
+              {tab.name}
+            </button>
           ))}
         </div>
+
+        {/* Grid Gallery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredGallery.map((item, index) => {
+            if (item.type === 'video') {
+              return (
+                <VideoGridItem 
+                  key={item.id} 
+                  item={item} 
+                  onClick={() => setLightboxIndex(index)} 
+                />
+              );
+            } else {
+              return (
+                <ImageGridItem 
+                  key={item.id} 
+                  item={item} 
+                  onClick={() => setLightboxIndex(index)} 
+                />
+              );
+            }
+          })}
+        </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxIndex !== null && (
+        <Lightbox
+          items={filteredGallery}
+          activeIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={handlePrev}
+          onNext={handleNext}
+        />
+      )}
     </div>
   );
 }

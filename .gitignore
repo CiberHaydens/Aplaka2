@@ -32,3 +32,6 @@ coverage/
 .DS_Store
 *.suo
 Thumbs.db
+
+# Scripts
+/scripts
