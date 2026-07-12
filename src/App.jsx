@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye, Copy } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye, Copy, Instagram } from 'lucide-react';
 import Header from './Header';
 import { servicesData } from './servicesData';
 import ServiceDetailPage from './ServiceDetailPage';
@@ -21,59 +21,18 @@ const projectsGallery = [
     items: [
       {
         type: 'video',
-        url: '/image/proyectos/tv-oculta/video.mp4',
-        thumbnail: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
+        url: '/image/proyectos/tv-oculta/tv_oculta_video.mp4',
         title: 'Funcionamiento del mecanismo motorizado'
       },
       {
         type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_1.webp',
+        url: '/image/proyectos/tv-oculta/tv_cerrada.webp',
         title: 'Instalación de la estructura del techo'
       },
       {
         type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_2.webp',
+        url: '/image/proyectos/tv-oculta/tv_abierta.webp',
         title: 'Estructura metálica del falso techo'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_3.webp',
-        title: 'Preparación de instalaciones eléctricas'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_4.webp',
-        title: 'Placas de Pladur atornilladas'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
-        title: 'Acabado y masillado de juntas'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_6.webp',
-        title: 'Techo terminado y pintado'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_7.webp',
-        title: 'Mecanismo en posición oculta'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_8.webp',
-        title: 'Mecanismo en posición desplegada'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_9.webp',
-        title: 'Detalle de la integración estética'
-      },
-      {
-        type: 'image',
-        url: '/image/proyectos/tv-oculta/tv_oculta_10.webp',
-        title: 'Pruebas finales de funcionamiento'
       }
     ]
   },
@@ -148,7 +107,6 @@ const projectsGallery = [
     id: 'cajon-cocina-project',
     title: 'Cajón Cubre Muebles de Cocina',
     category: 'cajon-cocina',
-    description: 'Cerramiento superior con placas de yeso hidrófugo para integrar los muebles de cocina con el techo de forma limpia.',
     items: [
       {
         type: 'image',
@@ -318,7 +276,7 @@ function Servicios() {
               to={`/servicios/${service.id}`}
               className="group cursor-pointer bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-green-300 transition-all duration-300 hover:-translate-y-1.5 flex flex-col h-full"
             >
-              <div className="h-48 overflow-hidden relative">
+              <div className="h-64 sm:h-72 overflow-hidden relative">
                 <img 
                   src={service.image} 
                   alt={service.title} 
@@ -330,13 +288,8 @@ function Servicios() {
                   </span>
                 </div>
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed flex-grow">{service.description}</p>
-                <div className="mt-5 pt-4 border-t border-gray-100 flex items-center text-green-600 font-semibold text-sm group-hover:underline">
-                  Conocer más detalles
-                  <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </div>
+              <div className="p-6 flex flex-col flex-grow justify-between items-center text-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors w-full">{service.title}</h3>
               </div>
             </Link>
           ))}
@@ -347,43 +300,7 @@ function Servicios() {
 }
 
 
-function Nosotros() {
-  return (
-    <div className="pt-28 pb-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-          <div className="mb-10 lg:mb-0">
-            <img
-              src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80"
-              alt="Equipo trabajando"
-              className="rounded-2xl shadow-xl w-full object-cover h-[500px]"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-6">
-              Experiencia y precisión en montaje de Sistemas PYL
-            </h2>
-            
-            <div className="text-lg text-gray-600">
-              <p className="mb-8 leading-relaxed">
-                En Aplaka2, nuestra misión es ayudarte a crear espacios mejor aprovechados y confortables. Como instaladores especialistas en reformas de viviendas, comercios y oficinas, dominamos desde la tabiquería estructural hasta detalles de diseño como foseados, candilejas y mobiliario a medida, combinando estética con un aislamiento termoacústico insuperable.
-              </p>
-            </div>
-            
-            <ul className="space-y-4 bg-gray-50 p-6 rounded-xl border border-gray-100">
-              {['Sistemas PYL certificados', 'Aislamiento térmico y acústico', 'Instalación rápida y limpia', 'Asesoramiento técnico especializado'].map((item, i) => (
-                <li key={i} className="flex items-center text-gray-700">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-3 shrink-0" />
-                  <span className="text-lg font-medium">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+
 
 function VideoGridItem({ project, onClick }) {
   const videoRef = React.useRef(null);
@@ -443,9 +360,6 @@ function VideoGridItem({ project, onClick }) {
 
         <div className="mt-auto pointer-events-none">
           <h3 className="text-white font-bold text-base line-clamp-1">{project.title}</h3>
-          {project.description && (
-            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{project.description}</p>
-          )}
         </div>
       </div>
     </div>
@@ -487,9 +401,6 @@ function ImageGridItem({ project, onClick }) {
 
         <div className="mt-auto pointer-events-none">
           <h3 className="text-white font-bold text-base line-clamp-1">{project.title}</h3>
-          {project.description && (
-            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{project.description}</p>
-          )}
         </div>
       </div>
     </div>
@@ -499,6 +410,28 @@ function ImageGridItem({ project, onClick }) {
 function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMediaIndex }) {
   const currentItem = project.items[activeMediaIndex];
   if (!currentItem) return null;
+
+  const touchStartX = React.useRef(0);
+  const touchEndX = React.useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = e.targetTouches[0].clientX; // initialize to avoid sudden jumps
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diffX = touchStartX.current - touchEndX.current;
+    const swipeThreshold = 50; // minimum swipe distance in pixels
+    if (diffX > swipeThreshold) {
+      onNext();
+    } else if (diffX < -swipeThreshold) {
+      onPrev();
+    }
+  };
 
   return (
     <div 
@@ -527,7 +460,7 @@ function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMedia
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-2 md:left-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
+            className="absolute left-2 md:left-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg hidden md:flex"
             aria-label="Anterior"
           >
             <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
@@ -536,8 +469,11 @@ function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMedia
 
         {/* Media Container */}
         <div 
-          className="flex flex-col items-center justify-center flex-grow max-h-[70vh] w-full"
+          className="flex flex-col items-center justify-center flex-grow max-h-[70vh] w-full touch-pan-y"
           onClick={(e) => e.stopPropagation()}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {currentItem.type === 'video' ? (
             <video
@@ -579,7 +515,7 @@ function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMedia
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-2 md:right-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
+            className="absolute right-2 md:right-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg hidden md:flex"
             aria-label="Siguiente"
           >
             <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
@@ -589,17 +525,26 @@ function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMedia
 
       {/* Caption / Description Bar */}
       <div 
-        className="w-full text-center max-w-3xl mx-auto p-4 bg-black/50 backdrop-blur-sm rounded-2xl border border-white/5 mb-2 animate-fade-in"
+        className="w-full text-center max-w-3xl mx-auto p-5 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10 mb-2 animate-fade-in flex flex-col items-center gap-3"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-white text-base md:text-lg font-bold tracking-wide">
-          {currentItem.title || project.title}
+        <h2 className="text-white text-base md:text-lg font-bold tracking-wide uppercase">
+          {project.title}
         </h2>
-        {project.description && (
-          <p className="text-gray-300 text-xs md:text-sm mt-2 font-light leading-relaxed">
-            {project.description}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-1">
+          <p className="text-gray-300 text-xs md:text-sm font-light">
+            ¿Te gustaría realizar un proyecto similar en tu hogar?
           </p>
-        )}
+          <a
+            href="https://wa.me/34685554188?text=Hola%20Aplaka2,%20he%20visto%20las%20fotos%20de%20vuestro%20proyecto%20y%20me%20gustaría%20pedir%20presupuesto."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-4.5 py-1.5 bg-green-600 hover:bg-green-700 text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 cursor-pointer pointer-events-auto"
+          >
+            <Phone className="h-3 w-3 fill-current text-white" />
+            <span>Consultar por WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -731,7 +676,7 @@ function Contacto() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {/* Teléfono / WhatsApp */}
           <a 
             href="https://wa.me/34685554188" 
@@ -743,7 +688,7 @@ function Contacto() {
               <Phone className="h-8 w-8 text-green-600 group-hover:text-white transition-colors duration-300" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Llámanos o WhatsApp</h3>
-            <p className="text-gray-600 mb-4 flex-grow">Atención rápida y personalizada para presupuestos y consultas.</p>
+            <p className="text-gray-600 mb-4 flex-grow text-sm">Atención rápida y personalizada para presupuestos y consultas.</p>
             <span className="text-lg font-semibold text-green-600">+34 685 554 188</span>
           </a>
 
@@ -756,8 +701,23 @@ function Contacto() {
               <Mail className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Envíanos un Email</h3>
-            <p className="text-gray-600 mb-4 flex-grow">Escríbenos con los detalles de tu proyecto y te responderemos pronto.</p>
+            <p className="text-gray-600 mb-4 flex-grow text-sm">Escríbenos con los detalles de tu proyecto y te responderemos pronto.</p>
             <span className="text-lg font-semibold text-blue-600">info@aplaka2.es</span>
+          </a>
+
+          {/* Instagram */}
+          <a 
+            href="https://www.instagram.com/aplaka2" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+          >
+            <div className="w-16 h-16 bg-pink-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-gradient-to-tr group-hover:from-amber-500 group-hover:via-pink-500 group-hover:to-violet-600 transition-all duration-300">
+              <Instagram className="h-8 w-8 text-pink-600 group-hover:text-white transition-colors duration-300" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">Síguenos</h3>
+            <p className="text-gray-600 mb-4 flex-grow text-sm">Mira nuestros trabajos diarios, novedades y fotos de proyectos.</p>
+            <span className="text-lg font-semibold text-pink-600">@aplaka2</span>
           </a>
 
           {/* Ubicación */}
@@ -766,7 +726,7 @@ function Contacto() {
               <MapPin className="h-8 w-8 text-red-600 group-hover:text-white transition-colors duration-300" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Nuestra Ubicación</h3>
-            <p className="text-gray-600 mb-4 flex-grow">Ofrecemos nuestros servicios principalmente en la provincia de Málaga.</p>
+            <p className="text-gray-600 mb-4 flex-grow text-sm">Ofrecemos nuestros servicios principalmente en la provincia de Málaga.</p>
             <span className="text-lg font-semibold text-red-600">Málaga, España</span>
           </div>
         </div>
@@ -781,9 +741,6 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex flex-col items-center justify-center mb-6">
           <img src="/image/APLAKA2-NO-BG.png" alt="Aplaka2 Logo" className="h-16 w-auto opacity-90" />
-          <p className="mt-3 text-sm text-gray-400 tracking-wider font-light">
-            Construimos espacios, creamos confianza
-          </p>
         </div>
         <div className="border-t border-gray-800 pt-8 text-sm text-gray-500 space-y-2">
           <p>&copy; {new Date().getFullYear()} Aplaka2. Todos los derechos reservados.</p>
@@ -820,7 +777,6 @@ export default function App() {
             <Route path="/" element={<Inicio />} />
             <Route path="/servicios" element={<Servicios />} />
             <Route path="/servicios/:serviceId" element={<ServiceDetailPage />} />
-            <Route path="/nosotros" element={<Nosotros />} />
             <Route path="/proyectos" element={<Proyectos />} />
             <Route path="/contacto" element={<Contacto />} />
           </Routes>
