@@ -7,7 +7,7 @@ import ServiceDetailPage from './ServiceDetailPage';
 import UnderConstruction from './UnderConstruction';
 
 // Cambiar a false para mostrar la web completa
-const UNDER_CONSTRUCTION = false;
+const UNDER_CONSTRUCTION = true;
 
 
 
