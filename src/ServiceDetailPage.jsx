@@ -10,7 +10,8 @@ import {
   Flame, 
   Shield, 
   Volume2,
-  X
+  X,
+  Eye
 } from 'lucide-react';
 import { servicesData } from './servicesData';
 
@@ -165,7 +166,7 @@ export default function ServiceDetailPage() {
         {hasItems && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {section.items.map((item, i) => {
-              const itemImg = getItemImage(item.name || '');
+              const itemImg = item.image || getItemImage(item.name || '');
               
               return (
                 <div 
@@ -306,11 +307,14 @@ export default function ServiceDetailPage() {
               {service.intro || service.description}
             </p>
           </div>
-          <div className="lg:col-span-5 h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md">
+          <div 
+            className="lg:col-span-5 h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md cursor-zoom-in bg-gray-100 group"
+            onClick={() => setActiveLightboxImg(service.image)}
+          >
             <img 
               src={service.image} 
               alt={service.title} 
-              className="w-full h-full object-cover" 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
             />
           </div>
         </div>

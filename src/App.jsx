@@ -1,249 +1,257 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye, Copy } from 'lucide-react';
 import Header from './Header';
 import { servicesData } from './servicesData';
 import ServiceDetailPage from './ServiceDetailPage';
 import UnderConstruction from './UnderConstruction';
 
 // Cambiar a false para mostrar la web completa
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = import.meta.env.VITE_UNDER_CONSTRUCTION !== 'false';
 
 
 
 const projectsGallery = [
-  // TV Oculta en Techo Project (Video + Images)
+  // TV Oculta en Techo Project
   {
-    id: 'tv-1',
-    type: 'video',
-    url: '/image/proyectos/tv-oculta/video.mp4',
-    thumbnail: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
-    title: 'Mecanismo motorizado de TV oculta en techo',
+    id: 'tv-oculta-project',
+    title: 'Techo con TV Oculta Motorizada',
     category: 'tv-oculta',
-    description: 'Demostración del funcionamiento del soporte motorizado que oculta y desciende la televisión integrada en el techo de Pladur.'
+    description: 'Integración de un soporte motorizado en falso techo de Pladur que desciende y oculta la televisión mediante control automático.',
+    items: [
+      {
+        type: 'video',
+        url: '/image/proyectos/tv-oculta/video.mp4',
+        thumbnail: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
+        title: 'Funcionamiento del mecanismo motorizado'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_1.webp',
+        title: 'Instalación de la estructura del techo'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_2.webp',
+        title: 'Estructura metálica del falso techo'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_3.webp',
+        title: 'Preparación de instalaciones eléctricas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_4.webp',
+        title: 'Placas de Pladur atornilladas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
+        title: 'Acabado y masillado de juntas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_6.webp',
+        title: 'Techo terminado y pintado'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_7.webp',
+        title: 'Mecanismo en posición oculta'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_8.webp',
+        title: 'Mecanismo en posición desplegada'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_9.webp',
+        title: 'Detalle de la integración estética'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/tv-oculta/tv_oculta_10.webp',
+        title: 'Pruebas finales de funcionamiento'
+      }
+    ]
   },
-  {
-    id: 'tv-2',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_1.webp',
-    title: 'Instalación de la estructura del techo',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-3',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_2.webp',
-    title: 'Estructura metálica del falso techo',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-4',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_3.webp',
-    title: 'Preparación de instalaciones eléctricas',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-5',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_4.webp',
-    title: 'Placas de Pladur atornilladas',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-6',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_5.webp',
-    title: 'Acabado y masillado de juntas',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-7',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_6.webp',
-    title: 'Techo terminado y pintado',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-8',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_7.webp',
-    title: 'Mecanismo en posición oculta',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-9',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_8.webp',
-    title: 'Mecanismo en posición desplegada',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-10',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_9.webp',
-    title: 'Detalle de la integración estética',
-    category: 'tv-oculta'
-  },
-  {
-    id: 'tv-11',
-    type: 'image',
-    url: '/image/proyectos/tv-oculta/tv_oculta_10.webp',
-    title: 'Pruebas finales de funcionamiento',
-    category: 'tv-oculta'
-  },
-
+  
   // Proyecto: Librería de Pladur
   {
-    id: 'libreria-img-1',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_1.webp',
-    title: 'Replanteo y diseño de la estantería',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-2',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_2.webp',
-    title: 'Montaje de estructura metálica perimetral',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-3',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_3.webp',
-    title: 'Refuerzos interiores para soportar peso',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-4',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_4.webp',
-    title: 'Cableado y cajas de luz integradas',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-5',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_5.webp',
-    title: 'Atornillado de placas de yeso en laterales',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-6',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_6.webp',
-    title: 'Revestimiento de baldas horizontales',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-7',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_7.webp',
-    title: 'Perfilería cantonera de protección',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-8',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_8.webp',
-    title: 'Aplicación de pasta para juntas',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-9',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_9.webp',
-    title: 'Lijado de precisión y afinado',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-10',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_10.webp',
-    title: 'Pintura de imprimación y acabado',
-    category: 'libreria'
-  },
-  {
-    id: 'libreria-img-11',
-    type: 'image',
-    url: '/image/proyectos/libreria/libreria_11.webp',
-    title: 'Librería de Pladur terminada',
-    category: 'libreria'
+    id: 'libreria-project',
+    title: 'Librería a Medida de Pladur',
+    category: 'libreria',
+    description: 'Estantería de obra integrada a medida en el salón, con perfiles reforzados y baldas preparadas para soportar peso.',
+    items: [
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_11.webp',
+        title: 'Librería de Pladur terminada'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_1.webp',
+        title: 'Replanteo y diseño de la estantería'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_2.webp',
+        title: 'Montaje de estructura metálica perimetral'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_3.webp',
+        title: 'Refuerzos interiores para soportar peso'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_4.webp',
+        title: 'Cableado y cajas de luz integradas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_5.webp',
+        title: 'Atornillado de placas de yeso en laterales'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_6.webp',
+        title: 'Revestimiento de baldas horizontales'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_7.webp',
+        title: 'Perfilería cantonera de protección'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_8.webp',
+        title: 'Aplicación de pasta para juntas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_9.webp',
+        title: 'Lijado de precisión y afinado'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/libreria/libreria_10.webp',
+        title: 'Pintura de imprimación y acabado'
+      }
+    ]
   },
 
   // Proyecto: Cajón cubre mueble de cocina
   {
-    id: 'cajon-cocina-img-1',
-    type: 'image',
-    url: '/image/proyectos/cajon-cocina/cajon-cocina_1.webp',
-    title: 'Estructura superior de ocultación',
-    category: 'cajon-cocina'
-  },
-  {
-    id: 'cajon-cocina-img-2',
-    type: 'image',
-    url: '/image/proyectos/cajon-cocina/cajon-cocina_2.webp',
-    title: 'Estructura con esquina',
-    category: 'cajon-cocina'
-  },
-  {
-    id: 'cajon-cocina-img-3',
-    type: 'image',
-    url: '/image/proyectos/cajon-cocina/cajon-cocina_3.webp',
-    title: 'Cajón de cocina terminado y masillado',
-    category: 'cajon-cocina'
+    id: 'cajon-cocina-project',
+    title: 'Cajón Cubre Muebles de Cocina',
+    category: 'cajon-cocina',
+    description: 'Cerramiento superior con placas de yeso hidrófugo para integrar los muebles de cocina con el techo de forma limpia.',
+    items: [
+      {
+        type: 'image',
+        url: '/image/proyectos/cajon-cocina/cajon-cocina_3.webp',
+        title: 'Cajón de cocina terminado y masillado'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/cajon-cocina/cajon-cocina_1.webp',
+        title: 'Estructura superior de ocultación'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/cajon-cocina/cajon-cocina_2.webp',
+        title: 'Colocación de placa hidrófuga'
+      }
+    ]
   },
 
   // General Pladur Projects (original unsplash items)
   {
-    id: 'gen-1',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+    id: 'gen-1-project',
     title: 'Techos decorativos con foseados y luces LED',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
+        title: 'Techos decorativos con foseados y luces LED'
+      }
+    ]
   },
   {
-    id: 'gen-2',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+    id: 'gen-2-project',
     title: 'Tabiquería comercial en locales y oficinas',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+        title: 'Tabiquería comercial en locales y oficinas'
+      }
+    ]
   },
   {
-    id: 'gen-3',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+    id: 'gen-3-project',
     title: 'Muebles a medida y estanterías de pladur',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+        title: 'Muebles a medida y estanterías de pladur'
+      }
+    ]
   },
   {
-    id: 'gen-4',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    id: 'gen-4-project',
     title: 'Instalación de techos registrables en oficinas',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+        title: 'Instalación de techos registrables en oficinas'
+      }
+    ]
   },
   {
-    id: 'gen-5',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
+    id: 'gen-5-project',
     title: 'Aislamiento acústico de paredes medianeras',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
+        title: 'Aislamiento acústico de paredes medianeras'
+      }
+    ]
   },
   {
-    id: 'gen-6',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
+    id: 'gen-6-project',
     title: 'Techos continuos para cocinas y baños',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
+        title: 'Techos continuos para cocinas y baños'
+      }
+    ]
   },
   {
-    id: 'gen-7',
-    type: 'image',
-    url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
+    id: 'gen-7-project',
     title: 'Falsos techos para aislamiento térmico',
-    category: 'otros'
+    category: 'otros',
+    items: [
+      {
+        type: 'image',
+        url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
+        title: 'Falsos techos para aislamiento térmico'
+      }
+    ]
   }
 ];
 
@@ -377,9 +385,10 @@ function Nosotros() {
   );
 }
 
-function VideoGridItem({ item, onClick }) {
+function VideoGridItem({ project, onClick }) {
   const videoRef = React.useRef(null);
   const [isHovered, setIsHovered] = React.useState(false);
+  const firstItem = project.items[0];
 
   React.useEffect(() => {
     if (!videoRef.current) return;
@@ -403,10 +412,15 @@ function VideoGridItem({ item, onClick }) {
       onMouseLeave={() => setIsHovered(false)}
       className="relative w-full h-64 overflow-hidden rounded-xl bg-black cursor-pointer group border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
     >
+      {project.items.length > 1 && (
+        <div className="absolute top-3 right-3 bg-black/60 text-white rounded-lg p-1.5 backdrop-blur-sm z-10 flex items-center justify-center border border-white/10">
+          <Copy className="h-4 w-4" />
+        </div>
+      )}
       <video
         ref={videoRef}
-        src={item.url}
-        poster={item.thumbnail}
+        src={firstItem.url}
+        poster={firstItem.thumbnail}
         muted
         loop
         playsInline
@@ -428,9 +442,9 @@ function VideoGridItem({ item, onClick }) {
         </div>
 
         <div className="mt-auto pointer-events-none">
-          <h3 className="text-white font-bold text-base line-clamp-1">{item.title}</h3>
-          {item.description && (
-            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{item.description}</p>
+          <h3 className="text-white font-bold text-base line-clamp-1">{project.title}</h3>
+          {project.description && (
+            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{project.description}</p>
           )}
         </div>
       </div>
@@ -438,15 +452,21 @@ function VideoGridItem({ item, onClick }) {
   );
 }
 
-function ImageGridItem({ item, onClick }) {
+function ImageGridItem({ project, onClick }) {
+  const firstItem = project.items[0];
   return (
     <div
       onClick={onClick}
       className="relative w-full h-64 overflow-hidden rounded-xl bg-gray-100 cursor-pointer group border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300"
     >
+      {project.items.length > 1 && (
+        <div className="absolute top-3 right-3 bg-black/60 text-white rounded-lg p-1.5 backdrop-blur-sm z-10 flex items-center justify-center border border-white/10">
+          <Copy className="h-4 w-4" />
+        </div>
+      )}
       <img
-        src={item.url}
-        alt={item.title}
+        src={firstItem.url}
+        alt={project.title}
         loading="lazy"
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
@@ -466,9 +486,9 @@ function ImageGridItem({ item, onClick }) {
         </div>
 
         <div className="mt-auto pointer-events-none">
-          <h3 className="text-white font-bold text-base line-clamp-1">{item.title}</h3>
-          {item.description && (
-            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{item.description}</p>
+          <h3 className="text-white font-bold text-base line-clamp-1">{project.title}</h3>
+          {project.description && (
+            <p className="text-gray-300 text-xs mt-1 line-clamp-2 font-light">{project.description}</p>
           )}
         </div>
       </div>
@@ -476,8 +496,8 @@ function ImageGridItem({ item, onClick }) {
   );
 }
 
-function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
-  const currentItem = items[activeIndex];
+function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMediaIndex }) {
+  const currentItem = project.items[activeMediaIndex];
   if (!currentItem) return null;
 
   return (
@@ -488,7 +508,7 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
       {/* Top bar */}
       <div className="flex justify-between items-center w-full z-10 text-white">
         <div className="text-sm font-semibold tracking-wider bg-black/40 px-3 py-1 rounded-full">
-          {activeIndex + 1} / {items.length}
+          {activeMediaIndex + 1} / {project.items.length}
         </div>
         <button
           onClick={onClose}
@@ -501,20 +521,22 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
       {/* Main Content Area */}
       <div className="flex items-center justify-between w-full flex-grow my-4 gap-2 relative">
         {/* Prev Button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onPrev();
-          }}
-          className="absolute left-2 md:left-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
-          aria-label="Anterior"
-        >
-          <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
-        </button>
+        {project.items.length > 1 && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrev();
+            }}
+            className="absolute left-2 md:left-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+          </button>
+        )}
 
         {/* Media Container */}
         <div 
-          className="flex items-center justify-center flex-grow max-h-[70vh] w-full"
+          className="flex flex-col items-center justify-center flex-grow max-h-[70vh] w-full"
           onClick={(e) => e.stopPropagation()}
         >
           {currentItem.type === 'video' ? (
@@ -523,28 +545,46 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
               controls
               autoPlay
               playsInline
-              className="max-h-[70vh] max-w-[85vw] md:max-w-[70vw] rounded-lg shadow-2xl border border-white/10"
+              className="max-h-[60vh] max-w-[85vw] md:max-w-[70vw] rounded-lg shadow-2xl border border-white/10"
             />
           ) : (
             <img
               src={currentItem.url}
-              alt={currentItem.title}
-              className="max-h-[70vh] max-w-[85vw] md:max-w-[70vw] object-contain rounded-lg shadow-2xl border border-white/10"
+              alt={currentItem.title || project.title}
+              className="max-h-[60vh] max-w-[85vw] md:max-w-[70vw] object-contain rounded-lg shadow-2xl border border-white/10"
             />
+          )}
+
+          {/* Instagram-style Carousel Dots indicator */}
+          {project.items.length > 1 && (
+            <div className="flex justify-center space-x-2 mt-6">
+              {project.items.map((_, dotIdx) => (
+                <button
+                  key={dotIdx}
+                  onClick={() => setMediaIndex(dotIdx)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    activeMediaIndex === dotIdx ? 'bg-green-500 scale-125 shadow-sm shadow-green-500/50' : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`Ir a imagen ${dotIdx + 1}`}
+                />
+              ))}
+            </div>
           )}
         </div>
 
         {/* Next Button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onNext();
-          }}
-          className="absolute right-2 md:right-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
-          aria-label="Siguiente"
-        >
-          <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-        </button>
+        {project.items.length > 1 && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
+            className="absolute right-2 md:right-4 z-10 bg-black/50 hover:bg-green-600 text-white hover:scale-110 p-3 rounded-full transition-all duration-200 cursor-pointer border border-white/10 shadow-lg"
+            aria-label="Siguiente"
+          >
+            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+          </button>
+        )}
       </div>
 
       {/* Caption / Description Bar */}
@@ -553,11 +593,11 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-white text-base md:text-lg font-bold tracking-wide">
-          {currentItem.title}
+          {currentItem.title || project.title}
         </h2>
-        {currentItem.description && (
+        {project.description && (
           <p className="text-gray-300 text-xs md:text-sm mt-2 font-light leading-relaxed">
-            {currentItem.description}
+            {project.description}
           </p>
         )}
       </div>
@@ -568,6 +608,7 @@ function Lightbox({ items, activeIndex, onClose, onPrev, onNext }) {
 function Proyectos() {
   const [activeTab, setActiveTab] = React.useState('todos');
   const [lightboxIndex, setLightboxIndex] = React.useState(null);
+  const [lightboxMediaIndex, setLightboxMediaIndex] = React.useState(0);
 
   // Filter items based on active tab
   const filteredGallery = React.useMemo(() => {
@@ -575,19 +616,17 @@ function Proyectos() {
     return projectsGallery.filter(item => item.category === activeTab);
   }, [activeTab]);
 
-  const handlePrev = React.useCallback(() => {
-    setLightboxIndex((prevIndex) => {
-      if (prevIndex === null) return null;
-      return prevIndex === 0 ? filteredGallery.length - 1 : prevIndex - 1;
-    });
-  }, [filteredGallery]);
+  const handlePrevMedia = React.useCallback(() => {
+    if (lightboxIndex === null) return;
+    const project = filteredGallery[lightboxIndex];
+    setLightboxMediaIndex((prev) => (prev === 0 ? project.items.length - 1 : prev - 1));
+  }, [lightboxIndex, filteredGallery]);
 
-  const handleNext = React.useCallback(() => {
-    setLightboxIndex((prevIndex) => {
-      if (prevIndex === null) return null;
-      return prevIndex === filteredGallery.length - 1 ? 0 : prevIndex + 1;
-    });
-  }, [filteredGallery]);
+  const handleNextMedia = React.useCallback(() => {
+    if (lightboxIndex === null) return;
+    const project = filteredGallery[lightboxIndex];
+    setLightboxMediaIndex((prev) => (prev === project.items.length - 1 ? 0 : prev + 1));
+  }, [lightboxIndex, filteredGallery]);
 
   // Handle keyboard shortcuts
   React.useEffect(() => {
@@ -596,14 +635,14 @@ function Proyectos() {
       if (e.key === 'Escape') {
         setLightboxIndex(null);
       } else if (e.key === 'ArrowLeft') {
-        handlePrev();
+        handlePrevMedia();
       } else if (e.key === 'ArrowRight') {
-        handleNext();
+        handleNextMedia();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex, handlePrev, handleNext]);
+  }, [lightboxIndex, handlePrevMedia, handleNextMedia]);
 
   return (
     <div className="pt-28 pb-20 bg-gray-50 min-h-screen">
@@ -644,21 +683,21 @@ function Proyectos() {
 
         {/* Grid Gallery */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredGallery.map((item, index) => {
-            if (item.type === 'video') {
+          {filteredGallery.map((project, index) => {
+            if (project.items[0].type === 'video') {
               return (
                 <VideoGridItem 
-                  key={item.id} 
-                  item={item} 
-                  onClick={() => setLightboxIndex(index)} 
+                  key={project.id} 
+                  project={project} 
+                  onClick={() => { setLightboxIndex(index); setLightboxMediaIndex(0); }} 
                 />
               );
             } else {
               return (
                 <ImageGridItem 
-                  key={item.id} 
-                  item={item} 
-                  onClick={() => setLightboxIndex(index)} 
+                  key={project.id} 
+                  project={project} 
+                  onClick={() => { setLightboxIndex(index); setLightboxMediaIndex(0); }} 
                 />
               );
             }
@@ -669,11 +708,12 @@ function Proyectos() {
       {/* Lightbox Modal */}
       {lightboxIndex !== null && (
         <Lightbox
-          items={filteredGallery}
-          activeIndex={lightboxIndex}
+          project={filteredGallery[lightboxIndex]}
+          activeMediaIndex={lightboxMediaIndex}
           onClose={() => setLightboxIndex(null)}
-          onPrev={handlePrev}
-          onNext={handleNext}
+          onPrev={handlePrevMedia}
+          onNext={handleNextMedia}
+          setMediaIndex={setLightboxMediaIndex}
         />
       )}
     </div>
