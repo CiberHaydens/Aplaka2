@@ -2,7 +2,6 @@ export const servicesData = [
   {
     id: 'tabiques',
     title: 'Tabiques',
-    description: 'Sistemas de construcción en seco ideales para crear y dividir espacios interiores de forma rápida y limpia. Gracias a su diseño versátil, ofrecen soluciones eficientes y de alta calidad tanto en viviendas como en espacios comerciales.',
     image: '/image/servicios/tabiques_portada.webp',
     intro: 'Los tabiques de Placa de Yeso Laminado (PYL) son paredes interiores ligeras y no portantes. Están formados por una estructura de perfiles de acero galvanizado (canales y montantes) con placas atornilladas a ambos lados.',
     sections: [
@@ -80,7 +79,6 @@ export const servicesData = [
   {
     id: 'trasdosados',
     title: 'Trasdosados',
-    description: 'Sistema eficaz para renovar y mejorar paredes existentes. Son ideales tanto para proyectos de rehabilitación como en obra nueva, gracias a su versatilidad, rapidez de instalación y alto rendimiento.',
     image: '/image/servicios/trasdosados_portada.webp',
     intro: 'Los trasdosados de Placa de Yeso Laminado (PYL) son revestimientos interiores que se aplican sobre un muro existente para mejorar el aislamiento térmico y acústico u ocultar instalaciones.',
     sections: [
@@ -164,7 +162,6 @@ export const servicesData = [
   {
     id: 'techos-continuos',
     title: 'Techos continuos',
-    description: 'Falsos techos formados por placas con juntas tratadas para conseguir una superficie lisa y uniforme. Se instalan suspendidos mediante perfilería oculta, permiten ocultar instalaciones y lograr acabados limpios y minimalistas.',
     image: '/image/servicios/techos_continuos_portada.webp',
     intro: 'Los techos continuos de Placa de Yeso Laminado (PYL) son falsos techos formados por una estructura metálica oculta sobre la que se atornillan las placas, consiguiendo una superficie lisa y uniforme sin juntas visibles.',
     sections: [
@@ -239,7 +236,6 @@ export const servicesData = [
   {
     id: 'techos-registrables',
     title: 'Techos registrables o desmontables',
-    description: 'Falsos techos formados por una estructura de perfiles vistos en forma de cuadrícula, sobre la que se colocan placas desmontables. Su principal ventaja es que permiten acceder fácilmente al espacio superior para instalaciones, mantenimiento o reparaciones sin necesidad de obra posterior.',
     image: '/image/servicios/techos_registrables_portada.webp',
     intro: 'Los techos registrables (o desmontables) son sistemas modulares suspendidos que permiten ocultar instalaciones y acceder fácilmente a ellas fácilmente cuando sea necesario, simplemente retirando las placas.',
     sections: [
@@ -285,7 +281,6 @@ export const servicesData = [
   {
     id: 'aislamientos',
     title: 'Aislamientos',
-    description: 'Materiales que se instalan en el interior de los diferentes sistemas PYL dentro de sus estructuras y cámaras de aire. Aunque la placa de yeso aporta rigidez y acabado, estos aislamientos son los que garantizan un mayor rendimiento térmico y acústico, mejorando notablemente el confort del espacio. Reduce drásticamente el gasto energético de la vivienda o comercio.',
     image: '/image/servicios/aislamientos_portada.webp',
     intro: 'El aislamiento en sistemas de Placa de Yeso Laminado (PYL) combina placas especializadas y materiales de relleno para mejorar el comportamiento térmico, acústico o de resistencia al fuego de paredes y techos.',
     sections: [
@@ -325,7 +320,6 @@ export const servicesData = [
   {
     id: 'foseados',
     title: 'Foseados / Candilejas',
-    description: 'Los foseados y candilejas de Placa de Yeso Laminado son rebajes en techos o paredes diseñados para ocultar tiras LED y lograr una luz indirecta y elegante. Se diferencian principalmente por su ubicación y la dirección en la que proyectan la luz.',
     image: '/image/servicios/foseados_portada.webp',
     intro: 'Los foseados y candilejas de Placa de Yeso Laminado (PYL) son rebajes en techos o paredes diseñados para ocultar tiras LED y conseguir una iluminación indirecta y elegante.',
     sections: [
@@ -347,7 +341,6 @@ export const servicesData = [
   {
     id: 'muebles',
     title: 'Muebles',
-    description: 'Elemento constructivo de PYL realizado a medida e integrado en la propia arquitectura de la vivienda, como si formara parte de la pared. Se ejecuta mediante una estructura metálica recubierta con placas, que posteriormente se sellan, lijan y pintan, logrando un acabado uniforme, limpio y totalmente integrado en el espacio.',
     image: '/image/servicios/muebles_portada.webp',
     intro: 'Los muebles de Placas de Yeso Laminado (PYL) son estructuras de obra seca hechas a medida.',
     sections: [
@@ -375,7 +368,6 @@ export const servicesData = [
   {
     id: 'acabados',
     title: 'Acabados',
-    description: 'Los acabados de placa de yeso laminado se clasifican oficialmente en cuatro niveles de calidad (de Q1 a Q4), definidos por la normativa europea. El nivel que elijas determina el tipo de revestimiento final que puedes aplicar, como pintura, papel pintado o azulejos.',
     image: '/image/servicios/acabados_portada.webp',
     intro: 'Los acabados de Placa de Yeso Laminado (PYL) se clasifican en cuatro niveles de calidad (Q1 a Q4), definidos por normativa europea. El nivel elegido determina qué tipo de revestimiento final se puede aplicar sobre la superficie.',
     sections: [

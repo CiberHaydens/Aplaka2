@@ -126,91 +126,128 @@ const projectsGallery = [
     ]
   },
 
-  // General Pladur Projects (original unsplash items)
+  // Proyecto: Jardineras Curvas de Pladur
   {
-    id: 'gen-1-project',
-    title: 'Techos decorativos con foseados y luces LED',
-    category: 'otros',
+    id: 'jardineras-curvas-project',
+    title: 'Jardineras Curvas de Pladur',
+    category: 'jardineras',
+    description: 'Diseño y montaje de jardineras decorativas con formas curvas y orgánicas integradas, realizadas con placas de yeso laminado (Pladur).',
     items: [
       {
         type: 'image',
-        url: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80',
-        title: 'Techos decorativos con foseados y luces LED'
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-1.webp',
+        title: 'Jardineras de pladur curvas terminadas con acabado decorativo en Málaga'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-11.webp',
+        title: 'Replanteo y curvado de la perfilería metálica para jardineras de Pladur'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-2.webp',
+        title: 'Estructura metálica y canales curvados para placa de yeso'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-3.webp',
+        title: 'Montaje de la base y perfilería estructural reforzada'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-4.webp',
+        title: 'Atornillado de placas de yeso especiales para curvas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-5.webp',
+        title: 'Revestimiento de las caras de las jardineras curvas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-6.webp',
+        title: 'Colocación de perfilería cantonera flexible en aristas curvas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-7.webp',
+        title: 'Preparación de las juntas y fijaciones mecánicas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-8.webp',
+        title: 'Aplicación y tendido de pasta de juntas sobre las curvas'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-9.webp',
+        title: 'Lijado y afinado de precisión de las formas curvas de Pladur'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/jardineras-curvas/jardinera-curva-pladur-10.webp',
+        title: 'Imprimación y preparación de superficies para pintura'
       }
     ]
   },
+
+  // Proyecto: Foseado LED y Techo Acústico AWA
   {
-    id: 'gen-2-project',
-    title: 'Tabiquería comercial en locales y oficinas',
+    id: 'foseado-awa-project',
+    title: 'Foseado LED y Techo Acústico AWA',
     category: 'otros',
+    description: 'Montaje de falso techo continuo de Pladur con foseado perimetral para iluminación LED indirecta y placas acústicas perforadas en el proyecto AWA (Puerto de la Torre, Málaga).',
     items: [
       {
         type: 'image',
-        url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
-        title: 'Tabiquería comercial en locales y oficinas'
+        url: '/image/proyectos/foseado-diseño-AWA/foseado-led-techo-acustico-1.webp',
+        title: 'Falso techo de Pladur terminado con foseado LED y placas acústicas en Málaga'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/foseado-diseño-AWA/foseado-led-techo-acustico-2.webp',
+        title: 'Estructura metálica del falso techo con perfilería reforzada'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/foseado-diseño-AWA/foseado-led-techo-acustico-3.webp',
+        title: 'Montaje del cajón para el foseado de luz LED indirecta'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/foseado-diseño-AWA/foseado-led-techo-acustico-4.webp',
+        title: 'Detalle de la placa de yeso laminado acústica y foseado perimetral'
       }
     ]
   },
+
+
+
+
+ // Proyecto: Aislamiento en techo y paredes
   {
-    id: 'gen-3-project',
-    title: 'Muebles a medida y estanterías de pladur',
+    id: 'aislamiento-techo-paredes-project',
+    title: 'Aislamiento en techo y paredes',
     category: 'otros',
+    description: 'Implementación de soluciones de aislamiento térmico e insonorización en techo y paredes',
     items: [
       {
         type: 'image',
-        url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
-        title: 'Muebles a medida y estanterías de pladur'
-      }
+        url: '/image/proyectos/aislamiento-techo-paredes/aislamiento-techo.webp',
+        title: 'Aislamiento térmico en falso techo con lana mineral y placas de yeso laminado'
+      },
+      {
+        type: 'image',
+        url: '/image/proyectos/aislamiento-techo-paredes/aislamiento-pared.webp',
+        title: 'Aislamiento insonorizado en paredes con material de relleno'
+      },
+      {
+        type: 'video',
+        url: '/image/proyectos/aislamiento-techo-paredes/video-aislamiento.mp4',
+        title: 'Proceso de instalación del aislamiento térmico'
+      },
     ]
   },
-  {
-    id: 'gen-4-project',
-    title: 'Instalación de techos registrables en oficinas',
-    category: 'otros',
-    items: [
-      {
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-        title: 'Instalación de techos registrables en oficinas'
-      }
-    ]
-  },
-  {
-    id: 'gen-5-project',
-    title: 'Aislamiento acústico de paredes medianeras',
-    category: 'otros',
-    items: [
-      {
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80',
-        title: 'Aislamiento acústico de paredes medianeras'
-      }
-    ]
-  },
-  {
-    id: 'gen-6-project',
-    title: 'Techos continuos para cocinas y baños',
-    category: 'otros',
-    items: [
-      {
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80',
-        title: 'Techos continuos para cocinas y baños'
-      }
-    ]
-  },
-  {
-    id: 'gen-7-project',
-    title: 'Falsos techos para aislamiento térmico',
-    category: 'otros',
-    items: [
-      {
-        type: 'image',
-        url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80',
-        title: 'Falsos techos para aislamiento térmico'
-      }
-    ]
-  }
 ];
 
 function Inicio() {
@@ -607,6 +644,7 @@ function Proyectos() {
             { id: 'tv-oculta', name: 'Techo con TV Oculta' },
             { id: 'libreria', name: 'Librerías de Pladur' },
             { id: 'cajon-cocina', name: 'Cajón Cocina' },
+            { id: 'jardineras', name: 'Jardineras Curvas' },
             { id: 'otros', name: 'Otros Proyectos' }
           ].map((tab) => (
             <button
