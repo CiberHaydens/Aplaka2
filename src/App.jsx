@@ -37,6 +37,7 @@ const projectsGallery = [
     ]
   },
   
+  /*
   // Proyecto: Librería de Pladur
   {
     id: 'libreria-project',
@@ -101,6 +102,7 @@ const projectsGallery = [
       }
     ]
   },
+*/
 
   // Proyecto: Cajón cubre mueble de cocina
   {
@@ -191,10 +193,10 @@ const projectsGallery = [
     ]
   },
 
-  // Proyecto: Foseado LED y Techo Acústico AWA
+  // Proyecto: Foseado LED y Techo Acústico
   {
     id: 'foseado-awa-project',
-    title: 'Foseado LED y Techo Acústico AWA',
+    title: 'Foseado LED y Techo Acústico',
     category: 'otros',
     description: 'Montaje de falso techo continuo de Pladur con foseado perimetral para iluminación LED indirecta y placas acústicas perforadas en el proyecto AWA (Puerto de la Torre, Málaga).',
     items: [
