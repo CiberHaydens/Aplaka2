@@ -107,7 +107,7 @@ const projectsGallery = [
   // Proyecto: Cajón cubre mueble de cocina
   {
     id: 'cajon-cocina-project',
-    title: 'Cajón Cubre Muebles de Cocina',
+    title: 'Integración de mueble en techo',
     category: 'cajon-cocina',
     items: [
       {
@@ -270,7 +270,7 @@ function Inicio() {
           <span className="text-xs md:text-sm font-semibold tracking-widest text-green-400 uppercase mb-3 block">
             Construimos espacios, creamos confianza
           </span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6">
             Especialistas en Sistemas PYL en Málaga (instaladores de “Pladur”)
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8">
@@ -302,7 +302,7 @@ function Servicios() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mt-2">Soluciones a medida en Sistemas PYL (“Pladur”)</h2>
+          <h2 className="text-3xl font-medium text-gray-900 sm:text-4xl mt-2">Soluciones a medida en Sistemas PYL (“Pladur”)</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
             Te ayudamos a transformar tus espacios con soluciones en Placa de Yeso Laminado (comúnmente conocido como “Pladur”) totalmente adaptadas a lo que necesitas. Cuidamos cada detalle de la instalación para que el resultado sea cómodo, funcional y con un acabado limpio y de calidad.
           </p>
@@ -328,7 +328,7 @@ function Servicios() {
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow justify-between items-center text-center">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors w-full">{service.title}</h3>
+                <h3 className="text-xl font-medium text-gray-900 group-hover:text-green-600 transition-colors w-full">{service.title}</h3>
               </div>
             </Link>
           ))}
@@ -656,7 +656,7 @@ function Proyectos() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Trabajos Realizados en Sistemas PYL</h2>
+          <h2 className="text-3xl font-medium text-gray-900 sm:text-4xl mt-2">Trabajos Realizados en Sistemas PYL</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             La mejor garantía es una obra bien terminada. Explora nuestra galería interactiva de proyectos recientes en Málaga: techos continuos, insonorizaciones y diseños exclusivos en placa de yeso laminado (Pladur).
           </p>
@@ -738,7 +738,7 @@ function Contacto() {
     <div className="pt-28 pb-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Pide tu presupuesto de Sistemas PYL sin compromiso</h2>
+          <h2 className="text-3xl font-medium text-gray-900 sm:text-4xl mt-2">Pide tu presupuesto de Sistemas PYL sin compromiso</h2>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
             ¿Estás listo para dar forma a tu proyecto? Cuéntanos si necesitas renovar tus techos, aislar tu vivienda, levantar tabiques o crear muebles de diseño. Te asesoramos de forma personalizada y diseñamos un presupuesto a tu medida sin coste alguno.
           </p>

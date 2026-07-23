@@ -161,7 +161,7 @@ export default function ServiceDetailPage() {
       <div key={index} className="mb-16">
         {/* Section Heading */}
         <div className="border-b border-gray-250 pb-4 mb-8">
-          <h3 className="text-2xl font-bold text-gray-900">{section.title}</h3>
+          <h3 className="text-2xl font-medium text-gray-900">{section.title}</h3>
           {section.description && (
             <p className="text-sm text-gray-600 mt-2 leading-relaxed max-w-3xl">
               {section.description}
@@ -207,7 +207,7 @@ export default function ServiceDetailPage() {
                     <div className="flex items-start justify-between gap-3 mb-3">
                       <div className="flex items-center gap-2">
                         {item.icon && renderItemIcon(item.icon, item.color)}
-                        <h4 className="font-bold text-base text-gray-900">
+                        <h4 className="font-medium text-base text-gray-900">
                           {item.name || item.type}
                         </h4>
                       </div>
@@ -282,7 +282,7 @@ export default function ServiceDetailPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white pointer-events-none">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight leading-none mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold uppercase tracking-tight leading-none mb-6">
             {service.title}
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-250 max-w-3xl font-light leading-relaxed">
@@ -311,7 +311,7 @@ export default function ServiceDetailPage() {
             <span className="text-xs font-semibold tracking-widest text-green-600 uppercase mb-2 block">
               Descripción General
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-6 uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-6 uppercase tracking-wide">
               ¿En qué consiste el servicio?
             </h2>
             <p className="text-sm sm:text-base text-gray-650 leading-relaxed font-light mb-4">
@@ -339,7 +339,7 @@ export default function ServiceDetailPage() {
         {/* Call To Action Block */}
         <div className="bg-green-600 rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 mt-20 shadow-lg">
           <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-2 uppercase">¿Listo para renovar tu espacio?</h3>
+            <h3 className="text-2xl md:text-3xl font-medium mb-2 uppercase">¿Listo para renovar tu espacio?</h3>
             <p className="text-green-50 text-sm md:text-base font-light max-w-xl">
               Solicita hoy mismo tu presupuesto sin compromiso para el montaje de {service.title} en Málaga. Te ofrecemos el mejor asesoramiento profesional.
             </p>
