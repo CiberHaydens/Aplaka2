@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye, Copy, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle, ChevronRight, Play, X, ChevronLeft, Eye, Copy, Instagram, Search } from 'lucide-react';
 import Header from './Header';
 import { servicesData } from './servicesData';
 import ServiceDetailPage from './ServiceDetailPage';
@@ -590,15 +590,38 @@ function Lightbox({ project, activeMediaIndex, onClose, onPrev, onNext, setMedia
 }
 
 function Proyectos() {
-  const [activeTab, setActiveTab] = React.useState('todos');
+  const [searchQuery, setSearchQuery] = React.useState('');
   const [lightboxIndex, setLightboxIndex] = React.useState(null);
   const [lightboxMediaIndex, setLightboxMediaIndex] = React.useState(0);
 
-  // Filter items based on active tab
+  // Filter items based on search query
   const filteredGallery = React.useMemo(() => {
-    if (activeTab === 'todos') return projectsGallery;
-    return projectsGallery.filter(item => item.category === activeTab);
-  }, [activeTab]);
+    if (!searchQuery.trim()) return projectsGallery;
+    
+    // Helper to lowercase and remove accents/diacritics
+    const cleanText = (str) => {
+      if (!str) return '';
+      return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    };
+
+    const query = cleanText(searchQuery).trim();
+    
+    // Word boundary match helper (matches if any word starts with the query)
+    const matchesQuery = (text) => {
+      if (!text) return false;
+      const cleaned = cleanText(text);
+      const words = cleaned.split(/[\s,.\-()]+/);
+      return words.some(word => word.startsWith(query));
+    };
+
+    return projectsGallery.filter(item => 
+      matchesQuery(item.title) ||
+      (query.length >= 3 && matchesQuery(item.description))
+    );
+  }, [searchQuery]);
 
   const handlePrevMedia = React.useCallback(() => {
     if (lightboxIndex === null) return;
@@ -639,31 +662,36 @@ function Proyectos() {
           </p>
         </div>
 
-        {/* Tab Filters */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-10">
-          {[
-            { id: 'todos', name: 'Todos los trabajos' },
-            { id: 'tv-oculta', name: 'Techo con TV Oculta' },
-            { id: 'libreria', name: 'Librerías de Pladur' },
-            { id: 'cajon-cocina', name: 'Cajón Cocina' },
-            { id: 'jardineras', name: 'Jardineras Curvas' },
-            { id: 'otros', name: 'Otros Proyectos' }
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
+        {/* Search Bar */}
+        <div className="max-w-md mx-auto mb-12">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Buscar proyectos (ej. TV, librería, techos...)"
+              value={searchQuery}
+              onChange={(e) => {
                 setLightboxIndex(null);
-                setActiveTab(tab.id);
+                setSearchQuery(e.target.value);
               }}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeTab === tab.id
-                  ? 'bg-green-600 text-white shadow-md shadow-green-600/20'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:border-green-300 hover:text-green-600'
-              }`}
-            >
-              {tab.name}
-            </button>
-          ))}
+              className="w-full pl-12 pr-10 py-3 bg-white border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent shadow-sm transition-all text-sm text-gray-700 font-medium"
+            />
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400" />
+            </div>
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 cursor-pointer"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+          {searchQuery && filteredGallery.length === 0 && (
+            <p className="text-center text-gray-500 text-sm mt-6">
+              No se encontraron proyectos para "{searchQuery}".
+            </p>
+          )}
         </div>
 
         {/* Grid Gallery */}

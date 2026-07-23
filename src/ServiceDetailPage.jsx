@@ -28,89 +28,19 @@ const iconMap = {
 const getItemImage = (itemName) => {
   const normalized = itemName.toLowerCase();
   
-  if (normalized.includes('estándar') || normalized.includes('tipo a')) {
-    return 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80'; // basic drywall work
-  }
-  if (normalized.includes('hidrófuga') || normalized.includes('tipo h') || normalized.includes('antihumedad')) {
-    return 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80'; // bathroom moisture resistant
-  }
-  if (normalized.includes('ignífuga') || normalized.includes('tipo f') || normalized.includes('fuego')) {
-    return 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'; // fire resistant ceiling/room
-  }
-  if (normalized.includes('alta dureza') || normalized.includes('tipo i')) {
-    return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80'; // high transit corridor
-  }
-  if (normalized.includes('aislamiento acústico') || normalized.includes('tipo d') || normalized.includes('acústica')) {
-    return 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80'; // sound proof/studio setting
-  }
-
-  // Installation methods
-  if (normalized.includes('directo')) {
-    return 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80'; // direct backing board
-  }
-  if (normalized.includes('semidirecto') || normalized.includes('omega')) {
-    return 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80'; // backing structure
-  }
-  if (normalized.includes('autoportante')) {
-    return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80'; // autoportant structure
-  }
-
-  // Ceilings
+  // Ceilings (keep local optimized ceiling photos)
   if (normalized.includes('techos directos')) {
-    return '/image/techos_directos.jpg';
+    return '/image/servicios/techos-continuos/techos_continuos_portada.webp';
   }
   if (normalized.includes('simples') || normalized.includes('tc')) {
-    return '/image/techos_suspendidos_simples.jpg';
+    return '/image/servicios/techos-continuos/techos_continuos_aislante.webp';
   }
   if (normalized.includes('dobles')) {
-    return '/image/techos_suspendidos_dobles.jpg';
-  }
-  if (normalized.includes('biapoyados') || normalized.includes('desmontables') || normalized.includes('registrables')) {
-    return 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80';
+    return '/image/servicios/techos-continuos/techos_suspendidos_dobles.webp';
   }
 
-  // Insulators
-  if (normalized.includes('lanas') || normalized.includes('lana de roca')) {
-    return 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80';
-  }
-  if (normalized.includes('espumas') || normalized.includes('poliuretano')) {
-    return 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80';
-  }
-  if (normalized.includes('reflexivos')) {
-    return 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80';
-  }
-
-  // Foseados
-  if (normalized.includes('perimetral')) {
-    return 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80';
-  }
-  if (normalized.includes('candileja')) {
-    return 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80';
-  }
-
-  // Muebles
-  if (normalized.includes('librerías') || normalized.includes('estanterías')) {
-    return 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80';
-  }
-  if (normalized.includes('tv')) {
-    return 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=600&q=80';
-  }
-
-  // Finishes Q1 - Q4
-  if (normalized.includes('q1')) {
-    return 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80';
-  }
-  if (normalized.includes('q2')) {
-    return 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80';
-  }
-  if (normalized.includes('q3')) {
-    return 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80';
-  }
-  if (normalized.includes('q4')) {
-    return 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80';
-  }
-
-  return null; // Fallback to normal card without top image banner
+  // All other generic fallbacks now map to our high-quality custom brand placeholder
+  return '/image/servicios/working_on_it.webp';
 };
 
 export default function ServiceDetailPage() {
@@ -167,6 +97,7 @@ export default function ServiceDetailPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {section.items.map((item, i) => {
               const itemImg = item.image || getItemImage(item.name || '');
+              const hasRealImage = itemImg && !itemImg.includes('working_on_it.webp');
               
               return (
                 <div 
@@ -174,7 +105,7 @@ export default function ServiceDetailPage() {
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:border-green-200 transition-all duration-300 flex flex-col h-full"
                 >
                   {/* Card Image Banner */}
-                  {itemImg ? (
+                  {hasRealImage ? (
                     <div 
                       className="h-40 overflow-hidden relative shrink-0 bg-gray-100 cursor-zoom-in"
                       onClick={() => setActiveLightboxImg(itemImg)}
@@ -187,7 +118,7 @@ export default function ServiceDetailPage() {
                       />
                     </div>
                   ) : (
-                    // Default header bar if no image matches
+                    // Default header bar if no real image matches
                     <div className="h-3 bg-green-600/10 shrink-0"></div>
                   )}
 

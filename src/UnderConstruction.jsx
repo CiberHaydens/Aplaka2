@@ -21,7 +21,7 @@ export default function UnderConstruction() {
           {/* Main Image Container */}
           <div className="flex-grow flex items-center justify-center min-h-0 w-full">
             <img
-              src="/image/under_construction.png"
+              src="/image/under_construction.webp"
               alt="En Construcción - Aplaka2"
               className="max-h-full max-w-full object-contain rounded-2xl shadow-lg select-none border border-slate-800/40"
             />
