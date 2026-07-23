@@ -6,8 +6,8 @@ import { servicesData } from './servicesData';
 import ServiceDetailPage from './ServiceDetailPage';
 import UnderConstruction from './UnderConstruction';
 
-// Cambiar a false para mostrar la web completa
-const UNDER_CONSTRUCTION = import.meta.env.VITE_UNDER_CONSTRUCTION !== 'false';
+// Por defecto la web está activa. Si se quiere bloquear con pantalla de "En construcción", definir VITE_UNDER_CONSTRUCTION=true.
+const UNDER_CONSTRUCTION = import.meta.env.VITE_UNDER_CONSTRUCTION === 'true';
 
 
 
