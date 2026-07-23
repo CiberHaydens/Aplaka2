@@ -334,11 +334,10 @@ export const servicesData = [
         type: 'foseados_list',
         title: 'Tipos',
         items: [
-          { name: 'Foseado perimetral (Fosa)', desc: 'El más común. Se crea un espacio entre el falso techo y la pared donde se instala la tira LED. La luz se proyecta hacia abajo o hacia la pared, generando el efecto de "techo flotante".', image: '/image/servicios/foseados/foseados_perimetral.webp' },
+          { name: 'Foseado perimetral (Fosa)', desc: 'El más común. Se crea un espacio entre el falso techo y la pared donde se instala la tira LED. La luz se proyecta hacia abajo o hacia la pared, generando el efecto de "techo flotante".' },
           {
             name: 'Candileja clásica',
-            desc: 'Fosa o bandeja independiente dentro del techo, de forma cuadrada o rectangular. La luz queda completamente oculta y se proyecta difuminada de forma indirecta.',
-            image: '/image/servicios/foseados/foseados_candilejas.webp'
+            desc: 'Fosa o bandeja independiente dentro del techo, de forma cuadrada o rectangular. La luz queda completamente oculta y se proyecta difuminada de forma indirecta.'
           },
           { name: 'Foseado en "U" (Luz bañadora simétrica)', desc: 'Se crea un cajón cerrado con una apertura hacia arriba y otra hacia abajo. Permite bañar de luz tanto el techo como la pared con una franja luminosa uniforme.' }
         ]
@@ -414,16 +413,6 @@ export const servicesData = [
             color: 'green',
             image: '/image/servicios/acabados/acabados_q4.webp'
           }
-        ]
-      },
-      {
-        type: 'plaques_simple',
-        title: 'Revestimientos',
-        description: 'Una vez alcanzado el nivel "Q" necesario, puedes aplicar los siguientes revestimientos sobre la PYL:',
-        items: [
-          { name: 'Pintura', desc: 'Requiere una mano previa de imprimación fijadora específica para PYL.', color: 'blue' },
-          { name: 'Papel Pintado', desc: 'Se aplica sellando previamente la pared para poder retirar el papel en el futuro sin dañar el cartón.', color: 'indigo' },
-          { name: 'Alicatados', desc: 'Se usa cemento cola flexible para fijar los azulejos directamente sobre las placas Q1 o placas hidrófugas.', color: 'teal' }
         ]
       }
     ]
