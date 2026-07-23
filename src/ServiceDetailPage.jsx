@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { 
   Phone, 
@@ -11,7 +11,9 @@ import {
   Shield, 
   Volume2,
   X,
-  Eye
+  Eye,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { servicesData } from './servicesData';
 
@@ -46,7 +48,7 @@ const getItemImage = (itemName) => {
 export default function ServiceDetailPage() {
   const { serviceId } = useParams();
   const navigate = useNavigate();
-  const [activeLightboxImg, setActiveLightboxImg] = useState(null);
+  const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
 
   const service = servicesData.find(s => s.id === serviceId);
 
@@ -61,6 +63,81 @@ export default function ServiceDetailPage() {
       navigate('/servicios');
     }
   }, [service, navigate]);
+
+  // Memoize all real images inside this service for lightbox carousel navigation
+  const allServiceImages = useMemo(() => {
+    if (!service) return [];
+    const imgs = [];
+    if (service.image) {
+      imgs.push({ url: service.image, title: service.title });
+    }
+    if (service.sections) {
+      service.sections.forEach(section => {
+        if (section.items) {
+          section.items.forEach(item => {
+            const itemImg = item.image || getItemImage(item.name || '');
+            if (itemImg && !itemImg.includes('working_on_it.webp')) {
+              if (!imgs.some(img => img.url === itemImg)) {
+                imgs.push({ url: itemImg, title: item.name });
+              }
+            }
+          });
+        }
+      });
+    }
+    return imgs;
+  }, [service]);
+
+  const handlePrevImg = useCallback(() => {
+    setActiveLightboxIndex(prev => {
+      if (prev === null) return null;
+      return prev === 0 ? allServiceImages.length - 1 : prev - 1;
+    });
+  }, [allServiceImages]);
+
+  const handleNextImg = useCallback(() => {
+    setActiveLightboxIndex(prev => {
+      if (prev === null) return null;
+      return prev === allServiceImages.length - 1 ? 0 : prev + 1;
+    });
+  }, [allServiceImages]);
+
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diffX = touchStartX.current - touchEndX.current;
+    const swipeThreshold = 50;
+    if (diffX > swipeThreshold) {
+      handleNextImg();
+    } else if (diffX < -swipeThreshold) {
+      handlePrevImg();
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (activeLightboxIndex === null) return;
+      if (e.key === 'Escape') {
+        setActiveLightboxIndex(null);
+      } else if (e.key === 'ArrowLeft') {
+        handlePrevImg();
+      } else if (e.key === 'ArrowRight') {
+        handleNextImg();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeLightboxIndex, handlePrevImg, handleNextImg]);
 
   if (!service) return null;
 
@@ -108,7 +185,10 @@ export default function ServiceDetailPage() {
                   {hasRealImage ? (
                     <div 
                       className="h-40 overflow-hidden relative shrink-0 bg-gray-100 cursor-zoom-in"
-                      onClick={() => setActiveLightboxImg(itemImg)}
+                      onClick={() => {
+                        const idx = allServiceImages.findIndex(img => img.url === itemImg);
+                        if (idx !== -1) setActiveLightboxIndex(idx);
+                      }}
                     >
                       <img 
                         src={itemImg} 
@@ -214,15 +294,15 @@ export default function ServiceDetailPage() {
       {/* Main Page Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        {/* Back Link Row */}
+        {/* Breadcrumbs Row (Mobile-first Tap targets) */}
         <div className="mb-10">
-          <Link 
-            to="/servicios" 
-            className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700 transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span>Volver al listado de servicios</span>
-          </Link>
+          <nav className="flex flex-wrap items-center text-xs sm:text-sm font-medium text-gray-400 gap-2 py-2 border-b border-gray-100">
+            <Link to="/" className="hover:text-green-600 transition-colors py-1.5 px-1 min-h-[44px] flex items-center">Inicio</Link>
+            <span>/</span>
+            <Link to="/servicios" className="hover:text-green-650 transition-colors py-1.5 px-1 min-h-[44px] flex items-center">Servicios</Link>
+            <span>/</span>
+            <span className="text-green-600 font-semibold py-1.5 px-1 flex items-center min-h-[44px]">{service.title}</span>
+          </nav>
         </div>
 
         {/* Overview Section */}
@@ -240,7 +320,10 @@ export default function ServiceDetailPage() {
           </div>
           <div 
             className="lg:col-span-5 h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md cursor-zoom-in bg-gray-100 group"
-            onClick={() => setActiveLightboxImg(service.image)}
+            onClick={() => {
+              const idx = allServiceImages.findIndex(img => img.url === service.image);
+              if (idx !== -1) setActiveLightboxIndex(idx);
+            }}
           >
             <img 
               src={service.image} 
@@ -284,22 +367,65 @@ export default function ServiceDetailPage() {
       </div>
 
       {/* Lightbox Modal */}
-      {activeLightboxImg && (
+      {activeLightboxIndex !== null && allServiceImages[activeLightboxIndex] && (
         <div 
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out animate-in fade-in duration-300"
-          onClick={() => setActiveLightboxImg(null)}
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out animate-in fade-in duration-300 touch-none"
+          onClick={() => setActiveLightboxIndex(null)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
+          {/* Close Button */}
           <button 
-            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors backdrop-blur-md cursor-pointer"
-            onClick={(e) => { e.stopPropagation(); setActiveLightboxImg(null); }}
+            className="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 text-white rounded-full p-3 transition-colors backdrop-blur-md cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center"
+            onClick={(e) => { e.stopPropagation(); setActiveLightboxIndex(null); }}
           >
             <X className="h-6 w-6" />
           </button>
-          <img 
-            src={activeLightboxImg} 
-            alt="Visualización ampliada" 
-            className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl animate-in zoom-in-95 duration-250 select-none pointer-events-none" 
-          />
+
+          {/* Left Arrow Button (Desktop Only) */}
+          {allServiceImages.length > 1 && (
+            <button
+              className="absolute left-4 z-50 hidden md:flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full p-3.5 transition-colors backdrop-blur-md cursor-pointer select-none"
+              onClick={(e) => { e.stopPropagation(); handlePrevImg(); }}
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+          )}
+
+          {/* Right Arrow Button (Desktop Only) */}
+          {allServiceImages.length > 1 && (
+            <button
+              className="absolute right-4 z-50 hidden md:flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full p-3.5 transition-colors backdrop-blur-md cursor-pointer select-none"
+              onClick={(e) => { e.stopPropagation(); handleNextImg(); }}
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          )}
+
+          {/* Image & Title Wrap */}
+          <div 
+            className="flex flex-col items-center max-w-full max-h-[90vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={allServiceImages[activeLightboxIndex].url} 
+              alt={allServiceImages[activeLightboxIndex].title || "Visualización ampliada"} 
+              className="max-w-full max-h-[75vh] md:max-h-[80vh] object-contain rounded-xl shadow-2xl animate-in zoom-in-95 duration-250 pointer-events-none select-none" 
+            />
+            {allServiceImages[activeLightboxIndex].title && (
+              <p className="text-white text-sm md:text-base font-semibold mt-4 text-center px-4 drop-shadow-md">
+                {allServiceImages[activeLightboxIndex].title}
+              </p>
+            )}
+            
+            {/* Step Counter/Indicators */}
+            {allServiceImages.length > 1 && (
+              <span className="text-xs text-gray-400 mt-2 bg-black/40 px-3 py-1 rounded-full font-medium tracking-wide">
+                {activeLightboxIndex + 1} / {allServiceImages.length}
+              </span>
+            )}
+          </div>
         </div>
       )}
 
